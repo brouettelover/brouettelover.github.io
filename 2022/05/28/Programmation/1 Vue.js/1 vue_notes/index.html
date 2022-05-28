@@ -225,7 +225,7 @@ var _hmt = _hmt || [];
 
 <div id="article-content">
 	<h2 id="Astuces-notes"><a href="#Astuces-notes" class="headerlink" title="Astuces notes"></a>Astuces notes</h2><p>Pour utiliser une variable dans vue.js</p>
-<pre><code>&quot;&quot;</code></pre>
+<pre><code>{{variable}}</code></pre>
 
 <p>La variable dans le input prends la valeur du champ input.</p>
 <pre><code>&lt;input v-model&#x3D;&quot;variable&quot;&gt;</code></pre>
@@ -239,7 +239,7 @@ var _hmt = _hmt || [];
 &lt;body&gt;
   &lt;div id&#x3D;&quot;montage&quot;&gt;
     &lt;!-- Ma variable vue.js --&gt;
-    &quot;&quot;
+    {{variable}}
     &lt;input v-model&#x3D;&quot;variable&quot;&gt;
   &lt;&#x2F;div&gt;
 
@@ -250,8 +250,9 @@ var _hmt = _hmt || [];
     let app &#x3D; Vue.createApp({
       data: function() {
         return {
-          &#x2F;&#x2F; ma variable
+          &#x2F;&#x2F; mes variables
           variable: &#39;Hello world !&#39;
+          &#x2F;&#x2F;, autre_variable: &#39;valeur&#39;
         }
       }
     })
@@ -262,6 +263,19 @@ var _hmt = _hmt || [];
 &lt;&#x2F;body&gt;
 &lt;&#x2F;html&gt;</code></pre>
 
+<p>Rendre un élément visible ou non.</p>
+<p>Vue :</p>
+<pre><code>&#x2F;&#x2F; insérer dans le div de l&#39;application
+&lt;div v-if&#x3D;&quot;isVisible&quot;&gt;Je suis un texte&lt;&#x2F;div&gt;</code></pre>
+<p>Script :</p>
+<pre><code>  let app &#x3D; Vue.createApp({
+  data: function() {
+    return {
+      &#x2F;&#x2F; mes variables
+      isVisible: true &#x2F;&#x2F;Affiche ou non
+    }
+  }
+})</code></pre>
 
 </div>
 
