@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		About Me | 
+		Vue note | 
 	 
 	Blog de BrouetteLover
 	</title>
@@ -166,7 +166,7 @@ var _hmt = _hmt || [];
 									</a>
 									
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2022/05/28/Programmation/1%20Vue.js/1%20vue_notes/">
                      
 										    1 vue_notes
@@ -203,28 +203,82 @@ var _hmt = _hmt || [];
 	<!-- 引入正文 -->
 	<div id="content">
 		<h1 id="article-title">
-	About Me
+	Vue note
 </h1>
 <div class="article-meta">
 	
 	<span>Brouettelover</span>
-	<span>2021-12-29 17:32:52</span>
+	<span>2022-05-28 19:49:18</span>
 		<div id="article-categories">
     
+		<span>Categories：</span>
+            
+    
 
+    
+		<span>Tags：</span>
+            
     
 		</div>
 
 </div>
 
 <div id="article-content">
-	<h2 id="Presentation"><a href="#Presentation" class="headerlink" title="Présentation"></a>Présentation</h2><p>Bonjour bienvenue sur mon blog, je suis un étudiant en informatique curieux d’apprendre.<br>Sur ce blog, vous trouverez, une sorte de pense-bête de mes projets et de mes apprentissages.<br>Mon blog se décompose en 3 parties majeurs : L’administration (gestion de serveur, configuration), Programmation (projets perso, Travail de fin d’étude), Piratage.</p>
-<h3 id="Administration"><a href="#Administration" class="headerlink" title="Administration"></a>Administration</h3><p>Dans cette section vous trouverez un ensemble de connaissance sur la configuration de système essentiellement de la configuration de serveur “oracle linux”.<br>Vous trouverez aussi une liste de commandes utiles pour la gestion d’un système linux “oracle-linux / manjaro KDE”.</p>
-<h3 id="Progammation"><a href="#Progammation" class="headerlink" title="Progammation"></a>Progammation</h3><p>Cette section comporte mon travail de fin d’étude avec les méthodes et les techniques utilisés afin de le mettre en place ainsi que d’autres projets personnels ammenés à évolué.<br>Mon TFE se compose de 2 parties : une sur l’application en soi et une autre sur les NODE Mcu (MicroContrôleur).<br>Le travail consiste a créer une plateforme sous forme d’application web permettant à des personnes souhaitant vivre en autonomie de facilité leur vie.<br>Les principales technologies utilisées sont du node.js, vue.js, mangodb, Arduino.</p>
-<h3 id="Piratage"><a href="#Piratage" class="headerlink" title="Piratage"></a>Piratage</h3><p>L’une de mes passions est le Piratage, les challenges de sécurité. Vous trouverez ici mes solutions pour résoudre des challenges sur des plateformes comme Root-me, HTB, …<br>Ainsi que la mise en place d’outils et leur utilisation.</p>
+	<h2 id="Listes-des-astuces-pour-faire-du-vue"><a href="#Listes-des-astuces-pour-faire-du-vue" class="headerlink" title="Listes des astuces pour faire du vue"></a>Listes des astuces pour faire du vue</h2><p>Pour utiliser une variable dans vue.js</p>
+<pre><code>&quot;&quot;</code></pre>
+
+<p>La variable dans le input prends la valeur du champ input.</p>
+<pre><code>&lt;input v-model&#x3D;&quot;variable&quot;&gt;</code></pre>
+
+<p>Si je veux donc afficher la variable. voici un exemple de code simplifier.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;titre&lt;&#x2F;title&gt;
+&lt;head&#x2F;&gt;
+&lt;body&gt;
+  &lt;div id&#x3D;&quot;montage&quot;&gt;
+    &lt;!-- Ma variable vue.js --&gt;
+    &quot;&quot;
+    &lt;input v-model&#x3D;&quot;variable&quot;&gt;
+  &lt;&#x2F;div&gt;
+
+&lt;!-- Intègre le vue.js --&gt;
+&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;unpkg.com&#x2F;vue@next&quot;&gt;&lt;&#x2F;script&gt;
+&lt;script&gt;
+  &#x2F;&#x2F; Créer l&#39;application
+    let app &#x3D; Vue.createApp({
+      data: function() {
+        return {
+          &#x2F;&#x2F; ma variable
+          variable: &#39;Hello world !&#39;
+        }
+      }
+    })
+
+    &#x2F;&#x2F; Monte l&#39;application en fonction de l&#39;id
+    app.mount(&#39;#montage&#39;)
+&lt;&#x2F;script&gt;
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;</code></pre>
+
 
 </div>
 
+
+    <div class="post-guide">
+        <div class="item left">
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2022/05/28/Programmation/1%20Vue.js/vue_note/">
+                Vue note
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
 
 
 
