@@ -230,7 +230,7 @@ var _hmt = _hmt || [];
 <p>La variable dans le input prends la valeur du champ input.</p>
 <pre><code>&lt;input v-model&#x3D;&quot;variable&quot;&gt;</code></pre>
 
-<p>Si je veux donc afficher la variable. voici un exemple de code simplifier.</p>
+<p>Si je veux donc afficher la variable. voici un exemple de code.</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -262,6 +262,9 @@ var _hmt = _hmt || [];
 &lt;&#x2F;script&gt;
 &lt;&#x2F;body&gt;
 &lt;&#x2F;html&gt;</code></pre>
+<p>Le bloc entier a son importance.<br>-&gt; La partie div “montage” : nous donne ce que l’application doit utiliser comme élément à “monter” pour que vue puisse être interprété correctement.<br>-&gt; La pariie “v-model” : donne au champ input la valeur de “variable” au sein du champ.<br>-&gt; script “src”…”” : intègre vue.js directement<br>-&gt; La partie “let app ..”: Créer mon application vue.js<br>    -&gt; dans le “data” : je retourne la valeur de mes variables séparé d’une virgule<br>-&gt; Le “app.mount(#montage)” : Monte l’application sur base de notre id ici “montage”</p>
+<p>Pour la suite de mes explications, je ne reprendrai que la partie du code essentiel afin de ne pas surcharger les informations.</p>
+<hr />
 
 <p>Rendre un élément visible ou non.</p>
 <p>Vue :</p>
