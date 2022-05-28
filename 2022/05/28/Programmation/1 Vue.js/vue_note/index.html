@@ -220,17 +220,36 @@ var _hmt = _hmt || [];
 <pre><code>&lt;input v-model&#x3D;&quot;variable&quot;&gt;</code></pre>
 
 <p>Si je veux donc afficher la variable. voici un exemple de code simplifier.</p>
-<pre><code>&lt;html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;tire&lt;&#x2F;title&gt;
+    &lt;title&gt;titre&lt;&#x2F;title&gt;
 &lt;head&#x2F;&gt;
 &lt;body&gt;
+  &lt;div id&#x3D;&quot;montage&quot;&gt;
+    &lt;!-- Ma variable vue.js --&gt;
     
     &lt;input v-model&#x3D;&quot;variable&quot;&gt;
-&lt;&#x2F;body&gt;
+  &lt;&#x2F;div&gt;
 
-&lt;&#x2F;html&gt;
-</code></pre>
+&lt;!-- Intègre le vue.js --&gt;
+&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;unpkg.com&#x2F;vue@next&quot;&gt;&lt;&#x2F;script&gt;
+&lt;script&gt;
+  &#x2F;&#x2F; Créer l&#39;application
+    let app &#x3D; Vue.createApp({
+      data: function() {
+        return {
+          &#x2F;&#x2F; ma variable
+          variable: &#39;Hello world !&#39;
+        }
+      }
+    })
+
+    &#x2F;&#x2F; Monte l&#39;application en fonction de l&#39;id
+    app.mount(&#39;#montage&#39;)
+&lt;&#x2F;script&gt;
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;</code></pre>
 
 
 </div>
