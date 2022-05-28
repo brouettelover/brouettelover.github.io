@@ -270,6 +270,19 @@ var _hmt = _hmt || [];
   }
 })</code></pre>
 
+<h3 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h3><p>Cliquer sur le bouton affichera ou supprimera le message</p>
+<h4 id="Vue-1"><a href="#Vue-1" class="headerlink" title="Vue :"></a>Vue :</h4><pre><code>&lt;button v-on:click&#x3D;&quot;isVisible &#x3D; !isVisible&quot;&gt;Show the message&lt;&#x2F;button&gt;
+&lt;!--   il est possible d&#39;utiliser aussi l&#39;attribut v-show qui ne supprimera pas dans le code mais simplement fera un &quot;display:none&quot;   --&gt;
+&lt;div v-if&#x3D;&quot;isVisible&quot;&gt;Je suis un texte&lt;&#x2F;div&gt;</code></pre>
+<h4 id="Script-1"><a href="#Script-1" class="headerlink" title="Script :"></a>Script :</h4><pre><code>  let app &#x3D; Vue.createApp({
+  data: function() {
+    return {
+      &#x2F;&#x2F; mes variables
+      isVisible: false &#x2F;&#x2F;Affiche ou non
+    }
+  }
+})</code></pre>
+
 </div>
 
 
