@@ -345,7 +345,26 @@ var _hmt = _hmt || [];
   }
 })</code></pre>
 
-<h2 id="Composants"><a href="#Composants" class="headerlink" title="Composants"></a>Composants</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+<h2 id="Composants"><a href="#Composants" class="headerlink" title="Composants"></a>Composants</h2><h3 id="Composants-basique-formulaire"><a href="#Composants-basique-formulaire" class="headerlink" title="Composants basique - formulaire"></a>Composants basique - formulaire</h3><p>Création d’un composant basique sous forme de formulaire avec l’utilisation d’un template et d’une variable</p>
+<h4 id="HTML-5"><a href="#HTML-5" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;
+&lt;!-- login-form est le composant que j&#39;ai créé --&gt;</code></pre>
+<h4 id="Script-5"><a href="#Script-5" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
+app.component(&#39;login-form&#39;, { &#x2F;&#x2F;nom de mon composant &quot;login-form&quot;
+  template:&#96; &#x2F;&#x2F;structure html interne
+  &lt;div&gt;
+    &lt;h1&gt;Vue.js - un simple pense bête&lt;&#x2F;h1&gt;
+    &lt;input type&#x3D;&quot;email&quot; &#x2F;&gt;
+    &lt;input type&#x3D;&quot;password&quot; &#x2F;&gt;
+  &lt;&#x2F;div&gt;
+  &#96;,
+  data() {
+    return {
+      title: &#39;Login form&#39; &#x2F;&#x2F;Variable interne du composant
+    }
+  }
+})</code></pre>
+
+
 </div>
 
 
