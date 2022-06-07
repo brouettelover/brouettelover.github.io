@@ -288,6 +288,8 @@ var _hmt = _hmt || [];
 <h3 id="toggleBox-Bouton-method"><a href="#toggleBox-Bouton-method" class="headerlink" title="toggleBox Bouton (method)"></a>toggleBox Bouton (method)</h3><p>Cliquer sur le bouton affichera ou supprimera le message en utilisant une methode : toggleBox</p>
 <h4 id="Vue-2"><a href="#Vue-2" class="headerlink" title="Vue"></a>Vue</h4><pre><code>&lt;div id&#x3D;&quot;montage&quot;&gt;
   &lt;button @click&#x3D;&quot;toggleBox&quot;&gt;togglebox&lt;&#x2F;button&gt;
+  &lt;!-- @click.modifier.modifier : plusieur modifier existe - @click.right écoutera le click droit uniquement --&gt;
+  &lt;!-- On peut chainer les modifier   --&gt;
   &lt;!--   il est possible d&#39;utiliser aussi &quot;@click &#x3D; &quot;v-on:click&quot; --&gt;
   &lt;div v-if&#x3D;&quot;isVisible&quot;&gt;Affiche moi !&lt;&#x2F;div&gt;
 &lt;&#x2F;div&gt;</code></pre>
@@ -327,8 +329,8 @@ var _hmt = _hmt || [];
     })</code></pre>
 
 <h3 id="Keypress-method-parametre"><a href="#Keypress-method-parametre" class="headerlink" title="Keypress method paramètre"></a>Keypress method paramètre</h3><p>Appuyer sur la touche enter affichera un message dans la console via un paramètre</p>
-<h4 id="Vue-4"><a href="#Vue-4" class="headerlink" title="Vue"></a>Vue</h4><pre><code>&lt;input @keyup.enter&#x3D;&quot;greet(bonjour)&quot;&gt;
-&lt;!-- greet(variable à passer comme paramètre) --&gt;</code></pre>
+<h4 id="Vue-4"><a href="#Vue-4" class="headerlink" title="Vue"></a>Vue</h4><pre><code>&lt;input @keyup.enter&#x3D;&quot;greet(bonjour + &#39;!!!!&#39;)&quot;&gt;
+&lt;!-- greet(variable à passer comme paramètre + &quot;concatenation&quot;) --&gt;</code></pre>
 <h4 id="Script-4"><a href="#Script-4" class="headerlink" title="Script"></a>Script</h4><pre><code>let app &#x3D; Vue.createApp({
   data: function() {
     return {
