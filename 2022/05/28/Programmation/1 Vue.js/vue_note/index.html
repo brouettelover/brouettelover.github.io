@@ -364,8 +364,7 @@ app.component(&#39;login-form&#39;, { &#x2F;&#x2F;nom de mon composant &quot;log
   }
 })</code></pre>
 <h3 id="Composants-basique-formulaire-2"><a href="#Composants-basique-formulaire-2" class="headerlink" title="Composants basique - formulaire 2"></a>Composants basique - formulaire 2</h3><p>Création d’un composant basique - avec une méthode</p>
-<h4 id="HTML-6"><a href="#HTML-6" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;
-&lt;!-- login-form est le composant que j&#39;ai créé --&gt;</code></pre>
+<h4 id="HTML-6"><a href="#HTML-6" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;</code></pre>
 <h4 id="Script-6"><a href="#Script-6" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
 app.component(&#39;login-form&#39;, {
   template:&#96;
@@ -386,6 +385,31 @@ app.component(&#39;login-form&#39;, {
   methods: {
     handleSubmit(){
         console.log(&#39;Submitted&#39;) &#x2F;&#x2F;affiche Submitted quand la méthode est appelée
+    }
+  }
+})</code></pre>
+<h3 id="Composants-basique-formulaire-2-1"><a href="#Composants-basique-formulaire-2-1" class="headerlink" title="Composants basique - formulaire 2"></a>Composants basique - formulaire 2</h3><p>Création d’un composant basique - avec affichage à l’envoie</p>
+<h4 id="HTML-7"><a href="#HTML-7" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;</code></pre>
+<h4 id="Script-7"><a href="#Script-7" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
+app.component(&#39;login-form&#39;, {
+  template:&#96;
+  &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt;
+    &lt;h1&gt;Vue.js - un simple pense bête&lt;&#x2F;h1&gt;
+    &lt;input type&#x3D;&quot;email&quot; v-model&#x3D;&quot;email&quot; &#x2F;&gt; &#x2F;&#x2F;change la valeur de la variable email
+    &lt;input type&#x3D;&quot;password&quot; v-model&#x3D;&quot;password&quot; &#x2F;&gt; &#x2F;&#x2F;change la valeur de la variable password
+    &lt;button&gt;Log in&lt;&#x2F;button&gt;
+  &lt;&#x2F;form&gt;
+  &#96;,
+  data() {
+    return {
+      title: &#39;Login form&#39;,
+      email: &#39;&#39;,
+      password: &#39;&#39;
+    }
+  },
+  methods: {
+    handleSubmit(){
+        console.log(this.email, this.password) &#x2F;&#x2F;affiche les valeurs contenues dans email et password
     }
   }
 })</code></pre>
