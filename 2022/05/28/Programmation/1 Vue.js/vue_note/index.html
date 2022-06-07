@@ -413,6 +413,81 @@ app.component(&#39;login-form&#39;, {
     }
   }
 })</code></pre>
+<h2 id="Proprietes-des-composants"><a href="#Proprietes-des-composants" class="headerlink" title="Propriétés des composants"></a>Propriétés des composants</h2><h3 id="Proprietes-parent-vers-enfant"><a href="#Proprietes-parent-vers-enfant" class="headerlink" title="Propriétés parent vers enfant"></a>Propriétés parent vers enfant</h3><p>Utilisation d’un autre composant pour passer des Propriétés du parent vers l’enfant via une variable</p>
+<h4 id="HTML-8"><a href="#HTML-8" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;</code></pre>
+<h4 id="Script-8"><a href="#Script-8" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
+app.component(&#39;login-form&#39;, {
+  template:&#96;
+  &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt;
+    &lt;h1&gt;Vue.js - un simple pense bête&lt;&#x2F;h1&gt;
+    &lt;custom-input type&#x3D;&quot;email&quot; v-bind:label&#x3D;&quot;emailLabel&quot; &#x2F;&gt; &#x2F;&#x2F;v-bind : autorise l&#39;utilisation de la variable javascript &quot;emailLabel&quot;
+    &lt;custom-input type&#x3D;&quot;password&quot; :label&#x3D;&quot;passwordLabel&quot; &#x2F;&gt; &#x2F;&#x2F;équivalent de v-bind
+    &lt;button&gt;Log in&lt;&#x2F;button&gt;
+  &lt;&#x2F;form&gt;
+  &#96;,
+  components: [&#39;custom-input&#39;], &#x2F;&#x2F;dit au composant qu&#39;il peut utiliser une liste d&#39;autre composant &#39;custom-input&#39;
+  data() {
+    return {
+      title: &#39;Login form&#39;,
+      email: &#39;&#39;,
+      password: &#39;&#39;,
+      emailLabel: &#39;Email&#39;, &#x2F;&#x2F;variable à passer à l&#39;enfant
+      passwordLabel: &#39;Password&#39;
+    }
+  },
+  methods: {
+    handleSubmit(){
+        console.log(this.email, this.password)
+    }
+  }
+})
+app.component(&#39;custom-input&#39;, {
+    template: &#96;
+      &lt;label&gt;
+         &#x2F;&#x2F;variable définie dans le parent
+        &lt;input type&#x3D;&quot;text&quot;&gt;
+      &lt;&#x2F;label&gt;
+    &#96;,
+    props: [&#39;label&#39;] &#x2F;&#x2F;utilise la valeur contenue dans la propriété label du parent soit :label&#x3D;&quot;emailLabel&quot; &#x3D;&gt; &#39;email&#39;
+})</code></pre>
+<h3 id="Proprietes-parent-vers-enfant-string"><a href="#Proprietes-parent-vers-enfant-string" class="headerlink" title="Propriétés parent vers enfant (string)"></a>Propriétés parent vers enfant (string)</h3><p>Utilisation d’un autre composant pour passer des Propriétés du parent vers l’enfant directement par une string</p>
+<h4 id="HTML-9"><a href="#HTML-9" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;</code></pre>
+<h4 id="Script-9"><a href="#Script-9" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
+app.component(&#39;login-form&#39;, {
+  template:&#96;
+  &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt;
+    &lt;h1&gt;Vue.js - un simple pense bête&lt;&#x2F;h1&gt;
+    &lt;custom-input type&#x3D;&quot;email&quot; label&#x3D;&quot;Enter Email :&quot; &#x2F;&gt; &#x2F;&#x2F;envoie la string directement sans utiliser de variable interne
+    &lt;custom-input type&#x3D;&quot;password&quot; label&#x3D;&quot;Enter Password :&quot; &#x2F;&gt; &#x2F;&#x2F;envoie la string directement sans utiliser de variable interne
+    &lt;button&gt;Log in&lt;&#x2F;button&gt;
+  &lt;&#x2F;form&gt;
+  &#96;,
+  components: [&#39;custom-input&#39;], &#x2F;&#x2F;dit au composant qu&#39;il peut utiliser une liste d&#39;autre composant &#39;custom-input&#39;
+  data() {
+    return {
+      title: &#39;Login form&#39;,
+      email: &#39;&#39;,
+      password: &#39;&#39;,
+      emailLabel: &#39;Email&#39;,
+      passwordLabel: &#39;Password&#39;
+    }
+  },
+  methods: {
+    handleSubmit(){
+        console.log(this.email, this.password)
+    }
+  }
+})
+app.component(&#39;custom-input&#39;, {
+    template: &#96;
+      &lt;label&gt;
+         &#x2F;&#x2F;variable définie dans le parent
+        &lt;input type&#x3D;&quot;text&quot;&gt;
+      &lt;&#x2F;label&gt;
+    &#96;,
+    props: [&#39;label&#39;] &#x2F;&#x2F;utilise la valeur contenue dans la propriété label du parent soit label&#x3D;&quot;Enter Email:&quot;
+})</code></pre>
+
 
 
 </div>
