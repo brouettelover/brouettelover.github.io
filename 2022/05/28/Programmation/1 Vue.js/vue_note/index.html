@@ -259,7 +259,7 @@ var _hmt = _hmt || [];
 -&gt; Le &quot;app.mount(#montage)&quot; : Monte l&#39;application sur base de notre id ici &quot;montage&quot;.
 </code></pre>
 <p>Pour la suite de mes explications, je ne reprendrai que la partie du code essentiel afin de ne pas surcharger les informations.</p>
-<h3 id="Element-visible"><a href="#Element-visible" class="headerlink" title="Elément visible"></a>Elément visible</h3><h4 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h4><pre><code>&#x2F;&#x2F; insérer dans le div de l&#39;application
+<h3 id="Element-visible"><a href="#Element-visible" class="headerlink" title="Elément visible"></a>Elément visible</h3><h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&#x2F;&#x2F; insérer dans le div de l&#39;application
 &lt;div v-if&#x3D;&quot;isVisible&quot;&gt;Je suis un texte&lt;&#x2F;div&gt;</code></pre>
 <h4 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h4><pre><code>  let app &#x3D; Vue.createApp({
   data: function() {
@@ -271,7 +271,7 @@ var _hmt = _hmt || [];
 })</code></pre>
 
 <h2 id="Evenements"><a href="#Evenements" class="headerlink" title="Evenements"></a>Evenements</h2><h3 id="Bouton-afficheur"><a href="#Bouton-afficheur" class="headerlink" title="Bouton afficheur"></a>Bouton afficheur</h3><p>Cliquer sur le bouton affichera ou supprimera le message</p>
-<h4 id="Vue-1"><a href="#Vue-1" class="headerlink" title="Vue"></a>Vue</h4><pre><code>&lt;button v-on:click&#x3D;&quot;isVisible &#x3D; !isVisible&quot;&gt;Show the message&lt;&#x2F;button&gt;
+<h4 id="HTML-1"><a href="#HTML-1" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;button v-on:click&#x3D;&quot;isVisible &#x3D; !isVisible&quot;&gt;Show the message&lt;&#x2F;button&gt;
 &lt;!--   il est possible d&#39;utiliser aussi l&#39;attribut v-show qui ne supprimera pas dans le code mais simplement fera un &quot;display:none&quot;   --&gt;
 &lt;div v-if&#x3D;&quot;isVisible&quot;&gt;Je suis un texte&lt;&#x2F;div&gt;
 &lt;!--   il est possible d&#39;utiliser aussi l&#39;attribut v-if-else  --&gt;
@@ -286,7 +286,7 @@ var _hmt = _hmt || [];
 })</code></pre>
 
 <h3 id="toggleBox-Bouton-method"><a href="#toggleBox-Bouton-method" class="headerlink" title="toggleBox Bouton (method)"></a>toggleBox Bouton (method)</h3><p>Cliquer sur le bouton affichera ou supprimera le message en utilisant une methode : toggleBox</p>
-<h4 id="Vue-2"><a href="#Vue-2" class="headerlink" title="Vue"></a>Vue</h4><pre><code>&lt;div id&#x3D;&quot;montage&quot;&gt;
+<h4 id="HTML-2"><a href="#HTML-2" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;div id&#x3D;&quot;montage&quot;&gt;
   &lt;button @click&#x3D;&quot;toggleBox&quot;&gt;togglebox&lt;&#x2F;button&gt;
   &lt;!-- @click.modifier.modifier : plusieur modifier existe - @click.right écoutera le click droit uniquement --&gt;
   &lt;!-- On peut chainer les modifier   --&gt;
@@ -309,7 +309,7 @@ var _hmt = _hmt || [];
     })</code></pre>
 
 <h3 id="Keypress-method"><a href="#Keypress-method" class="headerlink" title="Keypress method"></a>Keypress method</h3><p>Appuyer sur la touche enter affichera un message dans la console</p>
-<h4 id="Vue-3"><a href="#Vue-3" class="headerlink" title="Vue"></a>Vue</h4><pre><code>
+<h4 id="HTML-3"><a href="#HTML-3" class="headerlink" title="HTML"></a>HTML</h4><pre><code>
 &lt;input @keyup.enter&#x3D;&quot;greet&quot;&gt;
 &lt;!-- keyup.touchevoulue &#x3D; &quot;méthode désirée&quot;  --&gt;
 &lt;!-- keyup seul fonctionnera pour l&#39;ensemble des touches   --&gt;</code></pre>
@@ -329,7 +329,7 @@ var _hmt = _hmt || [];
     })</code></pre>
 
 <h3 id="Keypress-method-parametre"><a href="#Keypress-method-parametre" class="headerlink" title="Keypress method paramètre"></a>Keypress method paramètre</h3><p>Appuyer sur la touche enter affichera un message dans la console via un paramètre</p>
-<h4 id="Vue-4"><a href="#Vue-4" class="headerlink" title="Vue"></a>Vue</h4><pre><code>&lt;input @keyup.enter&#x3D;&quot;greet(bonjour + &#39;!!!!&#39;)&quot;&gt;
+<h4 id="HTML-4"><a href="#HTML-4" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;input @keyup.enter&#x3D;&quot;greet(bonjour + &#39;!!!!&#39;)&quot;&gt;
 &lt;!-- greet(variable à passer comme paramètre + &quot;concatenation&quot;) --&gt;</code></pre>
 <h4 id="Script-4"><a href="#Script-4" class="headerlink" title="Script"></a>Script</h4><pre><code>let app &#x3D; Vue.createApp({
   data: function() {
@@ -345,7 +345,7 @@ var _hmt = _hmt || [];
   }
 })</code></pre>
 
-
+<h2 id="Composants"><a href="#Composants" class="headerlink" title="Composants"></a>Composants</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3>
 </div>
 
 
