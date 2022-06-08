@@ -474,7 +474,7 @@ app.component(&#39;login-form&#39;, {
   },
   methods: {
     handleSubmit(){
-        console.log(this.email, this.password)
+        console.log(this.email, this.password) &#x2F;&#x2F; n&#39;affiche rien pour l&#39;instant car la valeur des variables n&#39;est pas envoyé à l&#39;enfant
     }
   }
 })
@@ -487,7 +487,69 @@ app.component(&#39;custom-input&#39;, {
     &#96;,
     props: [&#39;label&#39;] &#x2F;&#x2F;utilise la valeur contenue dans la propriété label du parent soit label&#x3D;&quot;Enter Email:&quot;
 })</code></pre>
-
+<h3 id="Variable-parent-vers-enfant"><a href="#Variable-parent-vers-enfant" class="headerlink" title="Variable parent vers enfant"></a>Variable parent vers enfant</h3><p>Utilisation de v-model pour passer une variable vers son enfant. Pour ensuite changer la valeur de la variable et l’update à son parent.</p>
+<h4 id="HTML-10"><a href="#HTML-10" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;</code></pre>
+<h4 id="Script-10"><a href="#Script-10" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
+app.component(&#39;login-form&#39;, {
+  template:&#96;
+  &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt;
+    &lt;h1&gt;Vue.js - un simple pense bête&lt;&#x2F;h1&gt;
+    &lt;custom-input v-model&#x3D;&quot;email&quot; :label&#x3D;&quot;emailLabel&quot; &#x2F;&gt;
+    &lt;!-- Envoie la valeur de email dans modelValue grace à v-model  --&gt;
+    &lt;custom-input v-model&#x3D;&quot;password&quot; :label&#x3D;&quot;passwordLabel&quot; &#x2F;&gt;
+    &lt;!-- Envoie la valeur de password dans modelValue grace à v-model  --&gt;
+    &lt;button&gt;Log in&lt;&#x2F;button&gt;
+  &lt;&#x2F;form&gt;
+  &#96;,
+  components: [&#39;custom-input&#39;], &#x2F;&#x2F;dit au composant qu&#39;il peut utiliser une liste d&#39;autre composant &#39;custom-input&#39;
+  data() {
+    return {
+      title: &#39;Login form&#39;,
+      email: &#39;&#39;, &#x2F;&#x2F;variable envoyé dans modelValue
+      password: &#39;&#39;, &#x2F;&#x2F;variable envoyé dans modelValue
+      emailLabel: &#39;Email&#39;,
+      passwordLabel: &#39;Password&#39;
+    }
+  },
+  methods: {
+    handleSubmit(){
+        console.log(this.email, this.password) &#x2F;&#x2F;affichera la valeur de &quot;email&quot; et &quot;password&quot; &lt;- modelValue &lt;- value
+    }
+  }
+})
+app.component(&#39;custom-input&#39;, {
+    template: &#96;
+      &lt;label&gt;
+        
+        &lt;input type&#x3D;&quot;text&quot; v-model&#x3D;&quot;inputValue&quot;&gt; &#x2F;&#x2F;envoie la valeur de l&#39;input dans la variable inputValue
+      &lt;&#x2F;label&gt;
+    &#96;,
+    props: [&#39;label&#39;, &#39;modelValue&#39;], &#x2F;&#x2F;la variable inputValue est définie comme une propriété du composant
+    computed: { &#x2F;&#x2F;objet qui permet d&#39;utiliser des variables comme des clefs permettant de récupéré les valeurs du parent via set et get
+      inputValue: {
+        get(){
+          return this.modelValue &#x2F;&#x2F;renvoie modelValue dans inputValue
+          &#x2F;&#x2F; à l&#39;actualisation si une variable du parent ici : email, password est modifier dans le code
+          &#x2F;&#x2F; l&#39;enfant recevra la valeur qu&#39;il retournera comme valeur de son champ et l&#39;affichere
+          &#x2F;&#x2F; par exemple si password: &quot;je suis un mot de passe&quot; -&gt; il l&#39;affichera directement dans son champ
+        },
+        set(value){
+          console.log(value) &#x2F;&#x2F; affiche la valeur de value -&gt; soit inputValue -&gt; modelValue -&gt; password&#x2F;email
+          &#x2F;&#x2F;tout ça en temps réel ce qui changera en fonction de la valeur des champs
+          this.$emit(&#39;update:modelValue&#39;, value)
+          &#x2F;&#x2F; $emit est une fonction qui émet des évenements que d&#39;autres Composants peuvent écouter
+          &#x2F;&#x2F; update est l&#39;évenement utilisé ici qui permet de modifier la valeur d&#39;une Variable d&#39;un parent
+          &#x2F;&#x2F; l&#39;update changera donc la valeur de modelValue vers value
+          &#x2F;&#x2F; donc modelValue changera sa valeur ce qui implique
+          &#x2F;&#x2F; que password et email vont changer respectivement leur valeur -&gt; modelValue -&gt; value grace au &quot;v-model&quot;
+        }
+      }
+    }
+})</code></pre>
+<blockquote><p>Le code étant un peu compliqué à comprendre je vais schématiser à l’aide d’image</p>
+</blockquote>
+<h5 id="explication-pour-le-get"><a href="#explication-pour-le-get" class="headerlink" title="explication pour le get()"></a>explication pour le get()</h5>
+<h5 id="explication-pour-le-set-value"><a href="#explication-pour-le-set-value" class="headerlink" title="explication pour le set(value)"></a>explication pour le set(value)</h5>
 
 
 </div>
