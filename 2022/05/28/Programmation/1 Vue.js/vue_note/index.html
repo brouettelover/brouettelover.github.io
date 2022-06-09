@@ -550,6 +550,28 @@ app.component(&#39;custom-input&#39;, {
 </blockquote>
 <h5 id="Explication-pour-le-get"><a href="#Explication-pour-le-get" class="headerlink" title="Explication pour le get()"></a>Explication pour le get()</h5><p><img src="/images/explication2.png"></p>
 <h5 id="Explication-pour-le-set-value"><a href="#Explication-pour-le-set-value" class="headerlink" title="Explication pour le set(value)"></a>Explication pour le set(value)</h5><p><img src="/images/explication.png"></p>
+<h3 id="Boucle"><a href="#Boucle" class="headerlink" title="Boucle"></a>Boucle</h3><p>Utilisation simple d’une boucle dans vue.js</p>
+<h4 id="HTML-11"><a href="#HTML-11" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;</code></pre>
+<h4 id="Script-11"><a href="#Script-11" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
+   app.component(&#39;login-form&#39;, {
+  template:&#96;
+  &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt;
+    &lt;p v-for&#x3D;&quot;str in inputs&quot; :key&#x3D;&quot;str&quot;&gt;&lt;&#x2F;p&gt;
+    &lt;!-- key est une propriété obligatoire d&#39;une loop qui doit être unique par boucle, l&#39;explication arrivera plus tard --&gt;
+    &lt;!-- pour chaque str dans inputs afficher la valeur de str soit -&gt; email,password,name --&gt;
+  &lt;&#x2F;form&gt;
+  &#96;,
+  components: [&#39;custom-input&#39;],
+  data() {
+    return {
+      title: &#39;Login form&#39;,
+      inputs: [
+        &#39;email&#39;,
+        &#39;password&#39;,
+        &#39;name&#39;
+      ] &#x2F;&#x2F;tableau des inputs dans lequel str va boucler
+    }
+  }</code></pre>
 
 </div>
 
