@@ -556,9 +556,10 @@ app.component(&#39;custom-input&#39;, {
    app.component(&#39;login-form&#39;, {
   template:&#96;
   &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt;
-    &lt;p v-for&#x3D;&quot;str in inputs&quot; :key&#x3D;&quot;str&quot;&gt;&lt;&#x2F;p&gt;
+     &lt;p v-for&#x3D;&quot;(str, i) in inputs&quot; :key&#x3D;&quot;str&quot;&gt; &lt;&#x2F;p&gt;
     &lt;!-- key est une propriété obligatoire d&#39;une loop qui doit être unique par boucle, l&#39;explication arrivera plus tard --&gt;
     &lt;!-- pour chaque str dans inputs afficher la valeur de str soit -&gt; email,password,name --&gt;
+    &lt;!-- i est l&#39;index de chaque élément de ma boucle -&gt; soit 0 pour email, 1 pour password, 2 pour name --&gt;
   &lt;&#x2F;form&gt;
   &#96;,
   components: [&#39;custom-input&#39;],
