@@ -574,6 +574,81 @@ app.component(&#39;custom-input&#39;, {
     }
   }</code></pre>
 
+<h3 id="Boucle-un-nouveau-type-d’input"><a href="#Boucle-un-nouveau-type-d’input" class="headerlink" title="Boucle - un nouveau type d’input"></a>Boucle - un nouveau type d’input</h3><p>Utilisation d’une boucle dans mes inputs pour ne plus utiliser qu’un seul custom-input qui boucle sur l’objet inputs</p>
+<h4 id="HTML-12"><a href="#HTML-12" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;</code></pre>
+<h4 id="Script-12"><a href="#Script-12" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
+app.component(&#39;login-form&#39;, {
+  template:&#96;
+  &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt;
+    &lt;h1&gt;Vue.js - un simple pense bête&lt;&#x2F;h1&gt;
+    &lt;custom-input
+      v-for&#x3D;&quot;(input, i) in inputs&quot;
+      :key&#x3D;&quot;i&quot;
+      v-model&#x3D;&quot;input.value&quot;
+      :label&#x3D;&quot;input.label&quot;
+      :type&#x3D;&quot;input.type&quot;
+    &#x2F;&gt;
+    &lt;!-- pour chaque input dans mon objet inputs --&gt;
+    &lt;!-- l&#39;index est ma clef --&gt;
+    &lt;!-- v-model prend la valeur d&#39;input.value qui correspond à &quot;valeur d&#39;email&quot;, &quot;valeur de password&quot; --&gt;
+    &lt;!-- label change aussi en fonction de la boucle soit à Email, Password --&gt;
+    &lt;!-- maintenant nous pouvons aussi modifier le type pour chaque input grâçe à notre boucle --&gt;
+    &lt;!-- le type prendra alors la valeur soit email, password --&gt;
+    &lt;button&gt;Log in&lt;&#x2F;button&gt;
+  &lt;&#x2F;form&gt;
+  &#96;,
+  components: [&#39;custom-input&#39;],
+  data() {
+    return {
+      title: &#39;Login form&#39;,
+      inputs: [ &#x2F;&#x2F;mon tableau d&#39;objets inputs
+        {
+          label: &#39;Email&#39;, &#x2F;&#x2F;input.label dans ma boucle
+          value: &#39;&#39;, &#x2F;&#x2F;input.value dans ma boucle
+          type: &#39;email&#39; &#x2F;&#x2F;input.type dans ma boucle
+        },
+        {
+          label: &#39;Password&#39;,
+          value: &#39;&#39;,
+          type: &#39;password&#39;
+        }
+      ],
+      email: &#39;&#39;,
+      password: &#39;&#39;,
+      emailLabel: &#39;Email&#39;,
+      passwordLabel: &#39;Password&#39;
+    }
+  },
+  methods: {
+    handleSubmit(){
+        console.log(this.inputs[0].value, this.inputs[1].value)
+        &#x2F;&#x2F;affiche la valeur d&#39;inputs à l&#39;index 0 et à l&#39;index 1
+        &#x2F;&#x2F; soit email et password
+    }
+  }
+})
+app.component(&#39;custom-input&#39;, {
+    template: &#96;
+      &lt;label&gt;
+        
+        &lt;input :type&#x3D;&quot;type&quot; v-model&#x3D;&quot;inputValue&quot;&gt;
+        &#x2F;&#x2F;on utilise donc la valeur &quot;type&quot; donné par le parent via la fonciton :
+      &lt;&#x2F;label&gt;
+    &#96;,
+    props: [&#39;label&#39;, &#39;type&#39;, &#39;modelValue&#39;],
+    &#x2F;&#x2F;vu qu&#39;on utilise le type extérieur on intègre la propriété du parent &#39;type&#39; grâce au v-bind
+    computed: {
+      inputValue: {
+        get(){
+          return this.modelValue
+        },
+        set(value){
+          this.$emit(&#39;update:modelValue&#39;, value)
+        }
+      }
+    }
+})</code></pre>
+
 </div>
 
 
