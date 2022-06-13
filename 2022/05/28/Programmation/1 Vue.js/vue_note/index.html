@@ -652,10 +652,17 @@ app.component(&#39;custom-input&#39;, {
 <h2 id="Lifecycle-hook"><a href="#Lifecycle-hook" class="headerlink" title="Lifecycle hook"></a>Lifecycle hook</h2><p>Dans vuejs, il existe ce qu’on appelle un cycle de vie. Ce cycle définit des actions exécutables à un instant T.</p>
 <h3 id="General"><a href="#General" class="headerlink" title="Général"></a>Général</h3><p>Voici un schéma général du cycle de vie avec le nom des fonctions appelés pour chaque actions sur le dom.</p>
 <p><img src="/images/vuejs/lifecycle.png"></p>
-<h4 id="HTML-13"><a href="#HTML-13" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;div id&#x3D;&quot;app&quot; v-cloack&gt;
+<h4 id="HTML-13"><a href="#HTML-13" class="headerlink" title="HTML"></a>HTML</h4><div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        HTML
+    </div>
+    <div class='spoiler-content'>
+        <pre><code>&lt;div id&#x3D;&quot;app&quot; v-cloack&gt;
   &lt;button @click&#x3D;&quot;toggleForm&quot;&gt;Show the form&lt;&#x2F;button&gt;
   &lt;login-form v-if&#x3D;&quot;isVisible&quot; &#x2F;&gt;
 &lt;&#x2F;div&gt;</code></pre>
+    </div>
+</div>
 <h4 id="Script-13"><a href="#Script-13" class="headerlink" title="Script"></a>Script</h4><pre><code>&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;unpkg.com&#x2F;vue@next&quot;&gt;&lt;&#x2F;script&gt;
 &lt;script&gt;
   &#x2F;&#x2F; Créer l&#39;application
