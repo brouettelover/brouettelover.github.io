@@ -530,7 +530,7 @@ app.component(&#39;custom-input&#39;, {
         get(){
           return this.modelValue &#x2F;&#x2F;renvoie modelValue dans inputValue
           &#x2F;&#x2F; à l&#39;actualisation si une variable du parent ici : email, password est modifier dans le code
-          &#x2F;&#x2F; l&#39;enfant recevra la valeur qu&#39;il retournera comme valeur de son champ et l&#39;affichere
+          &#x2F;&#x2F; l&#39;enfant recevra la valeur qu&#39;il retournera comme valeur de son champ et l&#39;affichera
           &#x2F;&#x2F; par exemple si password: &quot;je suis un mot de passe&quot; -&gt; il l&#39;affichera directement dans son champ
         },
         set(value){
@@ -548,9 +548,9 @@ app.component(&#39;custom-input&#39;, {
 })</code></pre>
 <blockquote><p>Le code étant un peu compliqué à comprendre je vais schématiser à l’aide d’image</p>
 </blockquote>
-<h5 id="Explication-pour-le-get"><a href="#Explication-pour-le-get" class="headerlink" title="Explication pour le get()"></a>Explication pour le get()</h5><p><img src="/images/vuejs/explication2.png"></p>
+<h5 id="Explication-pour-le-get"><a href="#Explication-pour-le-get" class="headerlink" title="Explication pour le get()"></a>Explication pour le get()</h5><p>![](/images/vuejs/ explication2.png)</p>
 <h5 id="Explication-pour-le-set-value"><a href="#Explication-pour-le-set-value" class="headerlink" title="Explication pour le set(value)"></a>Explication pour le set(value)</h5><p><img src="/images/vuejs/explication.png"></p>
-<h3 id="Boucle"><a href="#Boucle" class="headerlink" title="Boucle"></a>Boucle</h3><p>Utilisation simple d’une boucle dans vue.js</p>
+<h2 id="Boucles"><a href="#Boucles" class="headerlink" title="Boucles"></a>Boucles</h2><h3 id="Boucle-simple"><a href="#Boucle-simple" class="headerlink" title="Boucle simple"></a>Boucle simple</h3><p>Utilisation simple d’une boucle dans vue.js</p>
 <h4 id="HTML-11"><a href="#HTML-11" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;</code></pre>
 <h4 id="Script-11"><a href="#Script-11" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
    app.component(&#39;login-form&#39;, {
@@ -649,8 +649,119 @@ app.component(&#39;custom-input&#39;, {
     }
 })</code></pre>
 
+<h2 id="Lifecycle-hook"><a href="#Lifecycle-hook" class="headerlink" title="Lifecycle hook"></a>Lifecycle hook</h2><p>Dans vuejs, il existe ce qu’on appelle un cycle de vie. Ce cycle définit des actions exécutables à un instant T.</p>
+<h3 id="General"><a href="#General" class="headerlink" title="Général"></a>Général</h3><p>Voici un schéma général du cycle de vie avec le nom des fonctions appelés pour chaque actions sur le dom.</p>
 <p><img src="/images/vuejs/lifecycle.png"></p>
+<h4 id="HTML-13"><a href="#HTML-13" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;div id&#x3D;&quot;app&quot; v-cloack&gt;
+  &lt;button @click&#x3D;&quot;toggleForm&quot;&gt;Show the form&lt;&#x2F;button&gt;
+  &lt;login-form v-if&#x3D;&quot;isVisible&quot; &#x2F;&gt;
+&lt;&#x2F;div&gt;</code></pre>
+<h4 id="Script-13"><a href="#Script-13" class="headerlink" title="Script"></a>Script</h4><pre><code>&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;unpkg.com&#x2F;vue@next&quot;&gt;&lt;&#x2F;script&gt;
+&lt;script&gt;
+  &#x2F;&#x2F; Créer l&#39;application
+    let app &#x3D; Vue.createApp({
+      data: function() {
+        return {
+          &#x2F;&#x2F; ma variable 
+          isVisible: false
+        }
+      },
+      methods: {
+        toggleForm: function(){
+        this.isVisible &#x3D; !this.isVisible
+        &#x2F;&#x2F; la fonction supprime ou ajoute dans le domaine le composant &quot;login-form&quot;
+        }
+      }
+    })
+    app.component(&#39;login-form&#39;, {
+      template:&#96;
+      &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt;
+        &lt;h1&gt;Vue.js - un simple pense bête&lt;&#x2F;h1&gt;
+        &lt;custom-input
+          v-for&#x3D;&quot;(input, i) in inputs&quot;
+          :key&#x3D;&quot;i&quot;
+          v-model&#x3D;&quot;input.value&quot;
+          :label&#x3D;&quot;input.label&quot;
+          :type&#x3D;&quot;input.type&quot;
+        &#x2F;&gt;
+        &lt;button&gt;Log in&lt;&#x2F;button&gt;
+      &lt;&#x2F;form&gt;
+      &#96;,
+      components: [&#39;custom-input&#39;],
+      data() {
+        return {
+          title: &#39;Login form&#39;,
+          inputs: [
+            {
+              label: &#39;Email&#39;,
+              value: &#39;&#39;,
+              type: &#39;email&#39;
+            },
+            {
+              label: &#39;Password&#39;,
+              value: &#39;&#39;,
+              type: &#39;password&#39;
+            }
+          ],
+          email: &#39;&#39;,
+          password: &#39;&#39;,
+          emailLabel: &#39;Email&#39;,
+          passwordLabel: &#39;Password&#39;
+        }
+      },
+      methods: {
+        handleSubmit(){
+            console.log(this.inputs[0].value, this.inputs[1].value)
+        }
+      },
+      created(){
+        console.log(&quot;created&quot;)
+        &#x2F;&#x2F;Le composant est d&#39;abord créer
+      },
+      mounted() {
+        console.log(&quot;mounted&quot;)
+        &#x2F;&#x2F;Le composant est ensuite monté sur le domaine
+      },
+      updated() {
+       console.log(&quot;updated&quot;)
+       &#x2F;&#x2F;Si une variable est changé, il change sur le domaine. Il est donc &quot;updated&quot;
+      },
+      unmounted() {
+        console.log(&quot;unmounted&quot;)
+        &#x2F;&#x2F;Si ma fonction toggleForm fait disparaître le composant avec v-if. Il est supprimer du domaine et donc enlever
+      }
+    })
+&lt;div class&#x3D;&#39;spoiler collapsed&#39;&gt;
+    &lt;div class&#x3D;&#39;spoiler-title&#39;&gt;
+        custom-input
+    &lt;&#x2F;div&gt;
+    &lt;div class&#x3D;&#39;spoiler-content&#39;&gt;
+        &lt;pre&gt;&lt;code&gt;app.component(&#39;custom-input&#39;, {
+    template: &#96;
+      &lt;label&gt;
+        
+        &lt;input :type&#x3D;&quot;type&quot; v-model&#x3D;&quot;inputValue&quot;&gt;
+      &lt;&#x2F;label&gt;
+    &#96;,
+    props: [&#39;label&#39;, &#39;type&#39;, &#39;modelValue&#39;],
+    computed: { 
+      inputValue: {
+        get(){
+          return this.modelValue
+        },
+        set(value){
+          this.$emit(&#39;update:modelValue&#39;, value)
+        }
+      }
+    }
+})
+&#x2F;&#x2F; Monte l&#39;application en fonction de l&#39;id
+app.mount(&#39;#app&#39;)
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;&#x2F;script&gt;&lt;&#x2F;p&gt;
 
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
 </div>
 
 
