@@ -674,19 +674,26 @@ app.component(&#39;custom-input&#39;, {
       }
     })
     app.component(&#39;login-form&#39;, {
-      template:&#96;
-      &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt;
-        &lt;h1&gt;Vue.js - un simple pense bête&lt;&#x2F;h1&gt;
-        &lt;custom-input
-          v-for&#x3D;&quot;(input, i) in inputs&quot;
-          :key&#x3D;&quot;i&quot;
-          v-model&#x3D;&quot;input.value&quot;
-          :label&#x3D;&quot;input.label&quot;
-          :type&#x3D;&quot;input.type&quot;
-        &#x2F;&gt;
-        &lt;button&gt;Log in&lt;&#x2F;button&gt;
-      &lt;&#x2F;form&gt;
-      &#96;,
+      &lt;div class&#x3D;&#39;spoiler collapsed&#39;&gt;
+    &lt;div class&#x3D;&#39;spoiler-title&#39;&gt;
+        template
+    &lt;&#x2F;div&gt;
+    &lt;div class&#x3D;&#39;spoiler-content&#39;&gt;
+        &lt;p&gt;template:&#96;&lt;&#x2F;p&gt;
+&lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt;
+  &lt;h1&gt;Vue.js - un simple pense bête&lt;&#x2F;h1&gt;
+  &lt;custom-input
+    v-for&#x3D;&quot;(input, i) in inputs&quot;
+    :key&#x3D;&quot;i&quot;
+    v-model&#x3D;&quot;input.value&quot;
+    :label&#x3D;&quot;input.label&quot;
+    :type&#x3D;&quot;input.type&quot;
+  &#x2F;&gt;
+  &lt;button&gt;Log in&lt;&#x2F;button&gt;
+&lt;&#x2F;form&gt;
+&#96;,
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
       components: [&#39;custom-input&#39;],
       data() {
         return {
@@ -730,38 +737,38 @@ app.component(&#39;custom-input&#39;, {
         console.log(&quot;unmounted&quot;)
         &#x2F;&#x2F;Si ma fonction toggleForm fait disparaître le composant avec v-if. Il est supprimer du domaine et donc enlever
       }
-    })
-&lt;div class&#x3D;&#39;spoiler collapsed&#39;&gt;
-    &lt;div class&#x3D;&#39;spoiler-title&#39;&gt;
-        custom-input
-    &lt;&#x2F;div&gt;
-    &lt;div class&#x3D;&#39;spoiler-content&#39;&gt;
-        &lt;pre&gt;&lt;code&gt;app.component(&#39;custom-input&#39;, {
-    template: &#96;
-      &lt;label&gt;
-        
-        &lt;input :type&#x3D;&quot;type&quot; v-model&#x3D;&quot;inputValue&quot;&gt;
-      &lt;&#x2F;label&gt;
-    &#96;,
-    props: [&#39;label&#39;, &#39;type&#39;, &#39;modelValue&#39;],
-    computed: { 
-      inputValue: {
-        get(){
-          return this.modelValue
-        },
-        set(value){
-          this.$emit(&#39;update:modelValue&#39;, value)
-        }
-      }
-    }
-})
-&#x2F;&#x2F; Monte l&#39;application en fonction de l&#39;id
-app.mount(&#39;#app&#39;)
-&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;&lt;&#x2F;script&gt;&lt;&#x2F;p&gt;
+    })</code></pre>
 
-    &lt;&#x2F;div&gt;
-&lt;&#x2F;div&gt;</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        custom-input
+    </div>
+    <div class='spoiler-content'>
+        <pre><code>    app.component(&#39;custom-input&#39;, {
+        template: &#96;
+          &lt;label&gt;
+            
+            &lt;input :type&#x3D;&quot;type&quot; v-model&#x3D;&quot;inputValue&quot;&gt;
+          &lt;&#x2F;label&gt;
+        &#96;,
+        props: [&#39;label&#39;, &#39;type&#39;, &#39;modelValue&#39;],
+        computed: { 
+          inputValue: {
+            get(){
+              return this.modelValue
+            },
+            set(value){
+              this.$emit(&#39;update:modelValue&#39;, value)
+            }
+          }
+        }
+    })
+    &#x2F;&#x2F; Monte l&#39;application en fonction de l&#39;id
+    app.mount(&#39;#app&#39;)
+&lt;&#x2F;script&gt;</code></pre>
+    </div>
+</div>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
 </div>
 
 
