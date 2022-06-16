@@ -427,9 +427,10 @@ var _hmt = _hmt || [];
       },</code></pre>
     </div>
 </div>
-<pre><code>  created(){
+<pre><code>  &#x2F;&#x2F;à placer directement dans le composant pas dans &quot;methods:&quot;
+  created(){
     console.log(&quot;created&quot;)
-    &#x2F;&#x2F;Le composant est d&#39;abord créer
+    &#x2F;&#x2F;Le composant est d&#39;abord créé
   },
   mounted() {
     console.log(&quot;mounted&quot;)
@@ -437,11 +438,11 @@ var _hmt = _hmt || [];
   },
   updated() {
    console.log(&quot;updated&quot;)
-   &#x2F;&#x2F;Si une variable est changé, il change sur le domaine. Il est donc &quot;updated&quot;
+   &#x2F;&#x2F;Si une variable dans le composant est changée, il change sur le domaine. Il est donc &quot;updated&quot;
   },
   unmounted() {
     console.log(&quot;unmounted&quot;)
-    &#x2F;&#x2F;Si ma fonction toggleForm fait disparaître le composant avec v-if. Il est supprimer du domaine et donc enlever
+    &#x2F;&#x2F;Si ma fonction toggleForm fait disparaître le composant avec v-if. Il est supprimé du domaine et donc enlevé
   }
 })</code></pre>
 
