@@ -8,6 +8,8 @@
 	<!-- title -->
 	
 	<title>
+	
+		Composants - vue.js | 
 	 
 	Blog de BrouetteLover
 	</title>
@@ -204,7 +206,7 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2022/06/16/Programmation/Javascript/1%20Vue.js/composant/">
                      
 										    composant
@@ -266,67 +268,154 @@ var _hmt = _hmt || [];
 
 	<!-- 引入正文 -->
 	<div id="content">
-		<div id="index">
+		<h1 id="article-title">
+	Composants - vue.js
+</h1>
+<div class="article-meta">
 	
-		<div class="index-li">
-			<a href="/2022/05/28/Programmation/Javascript/1%20Vue.js/vue_note/">
-				<h2 class="index-title">
-					Vue.js - un simple pense bête
-				</h2>
-				<div class="index-brief">
-					Variables dans vue.jsVariable input{{variable}}
+	<span>Brouettelover</span>
+	<span>2022-06-16 22:25:43</span>
+		<div id="article-categories">
+    
+		<span>Categories：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/Javascript/">Javascript</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/Javascript/vue-js/">vue.js</a>
+                        </i>
+                      
+                    </span>
+                
+            
+    
 
-La variable dans le input prends la valeur du champ input.
-&lt;input v-model&#x3D;&quot;variable&quot
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2022-05-28</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2022/05/10/Administration%20Syst%C3%A8me/A%20Linux/1%20Commandes%20Utiles/">
-				<h2 class="index-title">
-					Commandes Utiles
-				</h2>
-				<div class="index-brief">
-					Listes des commandesAfficher l’ensemble des périphériques
-$ sudo inxi -Fazy
+    
+		<span>Tags：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/composant/">composant</a>
+                        </i>
+                    </span>
+                
+            
+    
+		</div>
 
-Options :
-
-F : 
-a
-z
-y
-
-
-Le journal
-$ sudo journalctl
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2022-05-10</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-	
-	<div id="index-paginator">
-		
-	</div>
 </div>
 
+<div id="article-content">
+	<h2 id="Composants"><a href="#Composants" class="headerlink" title="Composants"></a>Composants</h2><h3 id="Composants-basique-formulaire"><a href="#Composants-basique-formulaire" class="headerlink" title="Composants basique - formulaire"></a>Composants basique - formulaire</h3><p>Création d’un composant basique sous forme de formulaire avec l’utilisation d’un template et d’une variable</p>
+<h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;
+&lt;!-- login-form est le composant que j&#39;ai créé --&gt;</code></pre>
+<h4 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
+app.component(&#39;login-form&#39;, { &#x2F;&#x2F;nom de mon composant &quot;login-form&quot;
+  template:&#96; &#x2F;&#x2F;structure html interne
+  &lt;div&gt;
+    &lt;h1&gt;Composants - vue.js&lt;&#x2F;h1&gt;
+    &lt;input type&#x3D;&quot;email&quot; &#x2F;&gt;
+    &lt;input type&#x3D;&quot;password&quot; &#x2F;&gt;
+  &lt;&#x2F;div&gt;
+  &#96;,
+  data() {
+    return {
+      title: &#39;Login form&#39; &#x2F;&#x2F;Variable interne du composant
+    }
+  }
+})</code></pre>
+<h3 id="Composants-basique-formulaire-methode"><a href="#Composants-basique-formulaire-methode" class="headerlink" title="Composants basique - formulaire méthode"></a>Composants basique - formulaire méthode</h3><p>Création d’un composant basique - avec une méthode</p>
+<h4 id="HTML-1"><a href="#HTML-1" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;</code></pre>
+<h4 id="Script-1"><a href="#Script-1" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
+app.component(&#39;login-form&#39;, {
+  template:&#96;
+  &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt; &#x2F;&#x2F; @submit envoie le formulaire
+  &#x2F;&#x2F; .prevent empêche l&#39;actualisation de la page
+  &#x2F;&#x2F;handleSubmit est ma méthode
+    &lt;h1&gt;Composants - vue.js&lt;&#x2F;h1&gt;
+    &lt;input type&#x3D;&quot;email&quot; &#x2F;&gt;
+    &lt;input type&#x3D;&quot;password&quot; &#x2F;&gt;
+    &lt;button&gt;Log in&lt;&#x2F;button&gt;
+  &lt;&#x2F;form&gt;
+  &#96;,
+  data() {
+    return {
+      title: &#39;Login form&#39;
+    }
+  },
+  methods: {
+    handleSubmit(){
+        console.log(&#39;Submitted&#39;) &#x2F;&#x2F;affiche Submitted quand la méthode est appelée
+    }
+  }
+})</code></pre>
+<h3 id="Composants-basique-formulaire-affichage"><a href="#Composants-basique-formulaire-affichage" class="headerlink" title="Composants basique - formulaire affichage"></a>Composants basique - formulaire affichage</h3><p>Création d’un composant basique - avec affichage à l’envoie</p>
+<h4 id="HTML-2"><a href="#HTML-2" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;</code></pre>
+<h4 id="Script-2"><a href="#Script-2" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
+app.component(&#39;login-form&#39;, {
+  template:&#96;
+  &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt;
+    &lt;h1&gt;Composants - vue.js&lt;&#x2F;h1&gt;
+    &lt;input type&#x3D;&quot;email&quot; v-model&#x3D;&quot;email&quot; &#x2F;&gt; &#x2F;&#x2F;change la valeur de la variable email
+    &lt;input type&#x3D;&quot;password&quot; v-model&#x3D;&quot;password&quot; &#x2F;&gt; &#x2F;&#x2F;change la valeur de la variable password
+    &lt;button&gt;Log in&lt;&#x2F;button&gt;
+  &lt;&#x2F;form&gt;
+  &#96;,
+  data() {
+    return {
+      title: &#39;Login form&#39;,
+      email: &#39;&#39;,
+      password: &#39;&#39;
+    }
+  },
+  methods: {
+    handleSubmit(){
+        console.log(this.email, this.password) &#x2F;&#x2F;affiche les valeurs contenues dans email et password
+    }
+  }
+})</code></pre> 
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2022/06/16/Programmation/Javascript/1%20Vue.js/propri%C3%A9t%C3%A9_composant/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  Propriétés des composants - vue.js
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2022/06/16/Programmation/Javascript/1%20Vue.js/Evenement/">
+                évenement - vue.js
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+
+<script>
+	
+	
+</script>
 	</div>
 	<div id="footer">
 	<p>

@@ -8,6 +8,8 @@
 	<!-- title -->
 	
 	<title>
+	
+		Cycle de vie - vue.js | 
 	 
 	Blog de BrouetteLover
 	</title>
@@ -215,7 +217,7 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2022/06/16/Programmation/Javascript/1%20Vue.js/cycle%20de%20vie/">
                      
 										    cycle de vie
@@ -266,67 +268,215 @@ var _hmt = _hmt || [];
 
 	<!-- 引入正文 -->
 	<div id="content">
-		<div id="index">
+		<h1 id="article-title">
+	Cycle de vie - vue.js
+</h1>
+<div class="article-meta">
 	
-		<div class="index-li">
-			<a href="/2022/05/28/Programmation/Javascript/1%20Vue.js/vue_note/">
-				<h2 class="index-title">
-					Vue.js - un simple pense bête
-				</h2>
-				<div class="index-brief">
-					Variables dans vue.jsVariable input{{variable}}
+	<span>Brouettelover</span>
+	<span>2022-06-16 22:29:33</span>
+		<div id="article-categories">
+    
+		<span>Categories：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/Javascript/">Javascript</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/Javascript/vue-js/">vue.js</a>
+                        </i>
+                      
+                    </span>
+                
+            
+    
 
-La variable dans le input prends la valeur du champ input.
-&lt;input v-model&#x3D;&quot;variable&quot
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2022-05-28</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2022/05/10/Administration%20Syst%C3%A8me/A%20Linux/1%20Commandes%20Utiles/">
-				<h2 class="index-title">
-					Commandes Utiles
-				</h2>
-				<div class="index-brief">
-					Listes des commandesAfficher l’ensemble des périphériques
-$ sudo inxi -Fazy
+    
+		<span>Tags：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/v-for/">v-for</a>
+                        </i>
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/boucle/">boucle</a>
+                        </i>
+                    </span>
+                
+            
+    
+		</div>
 
-Options :
-
-F : 
-a
-z
-y
-
-
-Le journal
-$ sudo journalctl
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2022-05-10</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-	
-	<div id="index-paginator">
-		
-	</div>
 </div>
 
+<div id="article-content">
+	<h2 id="Lifecycle-hook"><a href="#Lifecycle-hook" class="headerlink" title="Lifecycle hook"></a>Lifecycle hook</h2><p>Dans vuejs, il existe ce qu’on appelle un cycle de vie. Ce cycle définit des actions exécutables à un instant T.</p>
+<p>Voici un schéma général du cycle de vie avec le nom des fonctions appelés pour chaque actions sur le dom.</p>
+<h4 id="Schema"><a href="#Schema" class="headerlink" title="Schéma"></a>Schéma</h4><p><img src="/images/vuejs/lifecycle.png"></p>
+<h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;div id&#x3D;&quot;app&quot; v-cloack&gt;
+  &lt;button @click&#x3D;&quot;toggleForm&quot;&gt;Show the form&lt;&#x2F;button&gt;
+  &lt;login-form v-if&#x3D;&quot;isVisible&quot; &#x2F;&gt;
+&lt;&#x2F;div&gt;</code></pre>
+
+<h4 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h4><div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        Script
+    </div>
+    <div class='spoiler-content'>
+        <pre><code>&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;unpkg.com&#x2F;vue@next&quot;&gt;&lt;&#x2F;script&gt;
+&lt;script&gt;
+  &#x2F;&#x2F; Créer l&#39;application
+    let app &#x3D; Vue.createApp({
+      data: function() {
+        return {
+          &#x2F;&#x2F; ma variable 
+          isVisible: false
+        }
+      },
+      methods: {
+        toggleForm: function(){
+        this.isVisible &#x3D; !this.isVisible
+        &#x2F;&#x2F; la fonction supprime ou ajoute dans le domaine le composant &quot;login-form&quot;
+        }
+      }
+    })
+    app.component(&#39;login-form&#39;, {
+      template:&#96;
+      &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt;
+        &lt;h1&gt;Cycle de vie - vue.js&lt;&#x2F;h1&gt;
+        &lt;custom-input
+          v-for&#x3D;&quot;(input, i) in inputs&quot;
+          :key&#x3D;&quot;i&quot;
+          v-model&#x3D;&quot;input.value&quot;
+          :label&#x3D;&quot;input.label&quot;
+          :type&#x3D;&quot;input.type&quot;
+        &#x2F;&gt;
+        &lt;button&gt;Log in&lt;&#x2F;button&gt;
+      &lt;&#x2F;form&gt;
+      &#96;,
+
+      components: [&#39;custom-input&#39;],
+      data() {
+        return {
+          title: &#39;Login form&#39;,
+          inputs: [
+            {
+              label: &#39;Email&#39;,
+              value: &#39;&#39;,
+              type: &#39;email&#39;
+            },
+            {
+              label: &#39;Password&#39;,
+              value: &#39;&#39;,
+              type: &#39;password&#39;
+            }
+          ],
+          email: &#39;&#39;,
+          password: &#39;&#39;,
+          emailLabel: &#39;Email&#39;,
+          passwordLabel: &#39;Password&#39;
+        }
+      },
+      methods: {
+        handleSubmit(){
+            console.log(this.inputs[0].value, this.inputs[1].value)
+        }
+      },</code></pre>
+    </div>
+</div>
+<pre><code>  created(){
+    console.log(&quot;created&quot;)
+    &#x2F;&#x2F;Le composant est d&#39;abord créer
+  },
+  mounted() {
+    console.log(&quot;mounted&quot;)
+    &#x2F;&#x2F;Le composant est ensuite monté sur le domaine
+  },
+  updated() {
+   console.log(&quot;updated&quot;)
+   &#x2F;&#x2F;Si une variable est changé, il change sur le domaine. Il est donc &quot;updated&quot;
+  },
+  unmounted() {
+    console.log(&quot;unmounted&quot;)
+    &#x2F;&#x2F;Si ma fonction toggleForm fait disparaître le composant avec v-if. Il est supprimer du domaine et donc enlever
+  }
+})</code></pre>
+
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        custom-input
+    </div>
+    <div class='spoiler-content'>
+        <pre><code>    app.component(&#39;custom-input&#39;, {
+        template: &#96;
+          &lt;label&gt;
+            
+            &lt;input :type&#x3D;&quot;type&quot; v-model&#x3D;&quot;inputValue&quot;&gt;
+          &lt;&#x2F;label&gt;
+        &#96;,
+        props: [&#39;label&#39;, &#39;type&#39;, &#39;modelValue&#39;],
+        computed: { 
+          inputValue: {
+            get(){
+              return this.modelValue
+            },
+            set(value){
+              this.$emit(&#39;update:modelValue&#39;, value)
+            }
+          }
+        }
+    })
+    &#x2F;&#x2F; Monte l&#39;application en fonction de l&#39;id
+    app.mount(&#39;#app&#39;)
+&lt;&#x2F;script&gt;</code></pre>
+    </div>
+</div>
+
+<h2 id="Information"><a href="#Information" class="headerlink" title="Information"></a>Information</h2><blockquote><div style="background-color:powderblue;">
+ A partir de maintenant, j'afficherai l'ensemble avec des balises spoilers pour éviter d'encombrer le visuel.
+ Le code sans spoiler sera la partie éssentiel. 
+</div></blockquote>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2022/06/16/Programmation/Javascript/1%20Vue.js/boucle/">
+                Boucles - vue.js
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+
+<script>
+	
+	
+</script>
 	</div>
 	<div id="footer">
 	<p>

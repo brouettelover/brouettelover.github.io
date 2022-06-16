@@ -8,6 +8,8 @@
 	<!-- title -->
 	
 	<title>
+	
+		Variables - vue.js | 
 	 
 	Blog de BrouetteLover
 	</title>
@@ -182,7 +184,7 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2022/06/16/Programmation/Javascript/1%20Vue.js/Variable/">
                      
 										    Variable
@@ -266,67 +268,132 @@ var _hmt = _hmt || [];
 
 	<!-- 引入正文 -->
 	<div id="content">
-		<div id="index">
+		<h1 id="article-title">
+	Variables - vue.js
+</h1>
+<div class="article-meta">
 	
-		<div class="index-li">
-			<a href="/2022/05/28/Programmation/Javascript/1%20Vue.js/vue_note/">
-				<h2 class="index-title">
-					Vue.js - un simple pense bête
-				</h2>
-				<div class="index-brief">
-					Variables dans vue.jsVariable input{{variable}}
+	<span>Brouettelover</span>
+	<span>2022-06-16 22:21:10</span>
+		<div id="article-categories">
+    
+		<span>Categories：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/Javascript/">Javascript</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/Javascript/vue-js/">vue.js</a>
+                        </i>
+                      
+                    </span>
+                
+            
+    
 
-La variable dans le input prends la valeur du champ input.
-&lt;input v-model&#x3D;&quot;variable&quot
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2022-05-28</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/2022/05/10/Administration%20Syst%C3%A8me/A%20Linux/1%20Commandes%20Utiles/">
-				<h2 class="index-title">
-					Commandes Utiles
-				</h2>
-				<div class="index-brief">
-					Listes des commandesAfficher l’ensemble des périphériques
-$ sudo inxi -Fazy
+    
+		<span>Tags：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/variable/">variable</a>
+                        </i>
+                    </span>
+                
+            
+    
+		</div>
 
-Options :
-
-F : 
-a
-z
-y
-
-
-Le journal
-$ sudo journalctl
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2022-05-10</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-	
-	<div id="index-paginator">
-		
-	</div>
 </div>
 
+<div id="article-content">
+	<h2 id="Variables-dans-vue-js"><a href="#Variables-dans-vue-js" class="headerlink" title="Variables dans vue.js"></a>Variables dans vue.js</h2><h3 id="Variable-input"><a href="#Variable-input" class="headerlink" title="Variable input"></a>Variable input</h3><pre><code>{{variable}}</code></pre>
+
+<p>La variable dans le input prends la valeur du champ input.</p>
+<pre><code>&lt;input v-model&#x3D;&quot;variable&quot;&gt;</code></pre>
+
+<p>Si je veux donc afficher la variable. voici un exemple de code.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;titre&lt;&#x2F;title&gt;
+&lt;head&#x2F;&gt;
+&lt;body&gt;
+  &lt;div id&#x3D;&quot;montage&quot;&gt;
+    &lt;!-- Ma variable vue.js --&gt;
+    {{variable}}
+    &lt;input v-model&#x3D;&quot;variable&quot;&gt;
+  &lt;&#x2F;div&gt;
+
+&lt;!-- Intègre le vue.js --&gt;
+&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;unpkg.com&#x2F;vue@next&quot;&gt;&lt;&#x2F;script&gt;
+&lt;script&gt;
+  &#x2F;&#x2F; Créer l&#39;application
+    let app &#x3D; Vue.createApp({
+      data: function() {
+        return {
+          &#x2F;&#x2F; mes variables
+          variable: &#39;Hello world !&#39;
+          &#x2F;&#x2F;, autre_variable: &#39;valeur&#39;
+        }
+      }
+    })
+
+    &#x2F;&#x2F; Monte l&#39;application en fonction de l&#39;id
+    app.mount(&#39;#montage&#39;)
+&lt;&#x2F;script&gt;
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;</code></pre>
+<p>Le bloc entier a son importance.</p>
+<pre><code class="list">-&gt; La partie div &quot;montage&quot; : nous donne ce que l&#39;application doit utiliser comme élément à &quot;monter&quot; pour que vue puisse être interprété correctement.
+-&gt; La pariie &quot;v-model&quot; : donne au champ input la valeur de &quot;variable&quot; au sein du champ.
+-&gt; script &quot;src&quot;...&quot;&quot; : intègre vue.js directement.
+-&gt; La partie &quot;let app ..&quot;: Créer mon application vue.js.
+    -&gt; dans le &quot;data&quot; : je retourne la valeur de mes variables séparé d&#39;une virgule.
+-&gt; Le &quot;app.mount(#montage)&quot; : Monte l&#39;application sur base de notre id ici &quot;montage&quot;.
+</code></pre>
+<p>Pour la suite de mes explications, je ne reprendrai que la partie du code essentiel afin de ne pas surcharger les informations.</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2022/06/16/Programmation/Javascript/1%20Vue.js/Evenement/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  évenement - vue.js
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2022/05/28/Programmation/Javascript/1%20Vue.js/vue_note/">
+                Vue.js - un simple pense bête
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+
+<script>
+	
+	
+</script>
 	</div>
 	<div id="footer">
 	<p>
