@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		Composants - vue.js | 
+		Cycle de vie - vue.js | 
 	 
 	Blog de BrouetteLover
 	</title>
@@ -141,7 +141,7 @@ var _hmt = _hmt || [];
 									
 							<ul>
 								<li class="file">
-									<a href="/2022/05/10/Administration/Syst%C3%A8mes/A%20Linux/1%20Commandes%20Utiles/">
+									<a href="/2022/06/20/Administration/Syst%C3%A8mes/A%20Linux/1%20Commandes%20Utiles/">
                      
 										    1 Commandes Utiles
                      
@@ -185,7 +185,7 @@ var _hmt = _hmt || [];
 									
 							<ul>
 								<li class="file">
-									<a href="/2022/05/28/Programmation/Javascript/1%20Vue.js/0%20Information/">
+									<a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/0%20Information/">
                      
 										    0 Information
                      
@@ -196,7 +196,7 @@ var _hmt = _hmt || [];
 			
 							<ul>
 								<li class="file">
-									<a href="/2022/06/16/Programmation/Javascript/1%20Vue.js/1%20Variable/">
+									<a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/1%20Variable/">
                      
 										    1 Variable
                      
@@ -207,7 +207,7 @@ var _hmt = _hmt || [];
 			
 							<ul>
 								<li class="file">
-									<a href="/2022/06/16/Programmation/Javascript/1%20Vue.js/2%20Evenement/">
+									<a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/2%20Evenement/">
                      
 										    2 Evenement
                      
@@ -217,8 +217,8 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file active">
-									<a href="/2022/06/16/Programmation/Javascript/1%20Vue.js/3%20Composant/">
+								<li class="file">
+									<a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/3%20Composant/">
                      
 										    3 Composant
                      
@@ -229,7 +229,7 @@ var _hmt = _hmt || [];
 			
 							<ul>
 								<li class="file">
-									<a href="/2022/06/16/Programmation/Javascript/1%20Vue.js/4%20Propri%C3%A9t%C3%A9%20Composant/">
+									<a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/4%20Propri%C3%A9t%C3%A9%20Composant/">
                      
 										    4 Propriété Composant
                      
@@ -240,7 +240,7 @@ var _hmt = _hmt || [];
 			
 							<ul>
 								<li class="file">
-									<a href="/2022/06/16/Programmation/Javascript/1%20Vue.js/5%20Boucle/">
+									<a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/5%20Boucle/">
                      
 										    5 Boucle
                      
@@ -250,8 +250,8 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file">
-									<a href="/2022/06/16/Programmation/Javascript/1%20Vue.js/6%20Cycle%20De%20Vie/">
+								<li class="file active">
+									<a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/6%20Cycle%20De%20Vie/">
                      
 										    6 Cycle De Vie
                      
@@ -262,7 +262,7 @@ var _hmt = _hmt || [];
 			
 							<ul>
 								<li class="file">
-									<a href="/2022/06/17/Programmation/Javascript/1%20Vue.js/7%20Vue%20App%20Installation/">
+									<a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/7%20Vue%20App%20Installation/">
                      
 										    7 Vue App Installation
                      
@@ -291,12 +291,12 @@ var _hmt = _hmt || [];
 	<!-- 引入正文 -->
 	<div id="content">
 		<h1 id="article-title">
-	Composants - vue.js
+	Cycle de vie - vue.js
 </h1>
 <div class="article-meta">
 	
 	<span>Brouettelover</span>
-	<span>2022-06-16 22:25:43</span>
+	<span>2022-06-20 11:45:07</span>
 		<div id="article-categories">
     
 		<span>Categories：</span>
@@ -329,7 +329,31 @@ var _hmt = _hmt || [];
                 
                     <span>
                         <i class="fa fa-tag" aria-hidden="true">
-                        <a href="/tags/composant/">composant</a>
+                        <a href="/tags/updated/">updated</a>
+                        </i>
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/mounted/">mounted</a>
+                        </i>
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/unmounted/">unmounted</a>
+                        </i>
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/created/">created</a>
                         </i>
                     </span>
                 
@@ -340,74 +364,133 @@ var _hmt = _hmt || [];
 </div>
 
 <div id="article-content">
-	<h2 id="Composants"><a href="#Composants" class="headerlink" title="Composants"></a>Composants</h2><h3 id="Composants-basique-formulaire"><a href="#Composants-basique-formulaire" class="headerlink" title="Composants basique - formulaire"></a>Composants basique - formulaire</h3><p>Création d’un composant basique sous forme de formulaire avec l’utilisation d’un template et d’une variable</p>
-<h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;
-&lt;!-- login-form est le composant que j&#39;ai créé --&gt;</code></pre>
-<h4 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
-app.component(&#39;login-form&#39;, { &#x2F;&#x2F;nom de mon composant &quot;login-form&quot;
-  template:&#96; &#x2F;&#x2F;structure html interne
-  &lt;div&gt;
-    &lt;h1&gt;Composants - vue.js&lt;&#x2F;h1&gt;
-    &lt;input type&#x3D;&quot;email&quot; &#x2F;&gt;
-    &lt;input type&#x3D;&quot;password&quot; &#x2F;&gt;
-  &lt;&#x2F;div&gt;
-  &#96;,
-  data() {
-    return {
-      title: &#39;Login form&#39; &#x2F;&#x2F;Variable interne du composant
-    }
+	<h2 id="Lifecycle-hook"><a href="#Lifecycle-hook" class="headerlink" title="Lifecycle hook"></a>Lifecycle hook</h2><p>Dans vuejs, il existe ce qu’on appelle un cycle de vie. Ce cycle définit des actions exécutables à un instant T.</p>
+<p>Voici un schéma général du cycle de vie avec le nom des fonctions appelés pour chaque actions sur le dom.</p>
+<h4 id="Schema"><a href="#Schema" class="headerlink" title="Schéma"></a>Schéma</h4><p><img src="/images/vuejs/lifecycle.png"></p>
+<h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;div id&#x3D;&quot;app&quot; v-cloack&gt;
+  &lt;button @click&#x3D;&quot;toggleForm&quot;&gt;Show the form&lt;&#x2F;button&gt;
+  &lt;login-form v-if&#x3D;&quot;isVisible&quot; &#x2F;&gt;
+&lt;&#x2F;div&gt;</code></pre>
+
+<h4 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h4><div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        Script
+    </div>
+    <div class='spoiler-content'>
+        <pre><code>&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;unpkg.com&#x2F;vue@next&quot;&gt;&lt;&#x2F;script&gt;
+&lt;script&gt;
+  &#x2F;&#x2F; Créer l&#39;application
+    let app &#x3D; Vue.createApp({
+      data: function() {
+        return {
+          &#x2F;&#x2F; ma variable 
+          isVisible: false
+        }
+      },
+      methods: {
+        toggleForm: function(){
+        this.isVisible &#x3D; !this.isVisible
+        &#x2F;&#x2F; la fonction supprime ou ajoute dans le domaine le composant &quot;login-form&quot;
+        }
+      }
+    })
+    app.component(&#39;login-form&#39;, {
+      template:&#96;
+      &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt;
+        &lt;h1&gt;Cycle de vie - vue.js&lt;&#x2F;h1&gt;
+        &lt;custom-input
+          v-for&#x3D;&quot;(input, i) in inputs&quot;
+          :key&#x3D;&quot;i&quot;
+          v-model&#x3D;&quot;input.value&quot;
+          :label&#x3D;&quot;input.label&quot;
+          :type&#x3D;&quot;input.type&quot;
+        &#x2F;&gt;
+        &lt;button&gt;Log in&lt;&#x2F;button&gt;
+      &lt;&#x2F;form&gt;
+      &#96;,
+
+      components: [&#39;custom-input&#39;],
+      data() {
+        return {
+          title: &#39;Login form&#39;,
+          inputs: [
+            {
+              label: &#39;Email&#39;,
+              value: &#39;&#39;,
+              type: &#39;email&#39;
+            },
+            {
+              label: &#39;Password&#39;,
+              value: &#39;&#39;,
+              type: &#39;password&#39;
+            }
+          ],
+          email: &#39;&#39;,
+          password: &#39;&#39;,
+          emailLabel: &#39;Email&#39;,
+          passwordLabel: &#39;Password&#39;
+        }
+      },
+      methods: {
+        handleSubmit(){
+            console.log(this.inputs[0].value, this.inputs[1].value)
+        }
+      },</code></pre>
+    </div>
+</div>
+<pre><code>  &#x2F;&#x2F;à placer directement dans le composant pas dans &quot;methods:&quot;
+  created(){
+    console.log(&quot;created&quot;)
+    &#x2F;&#x2F;Le composant est d&#39;abord créé
+  },
+  mounted() {
+    console.log(&quot;mounted&quot;)
+    &#x2F;&#x2F;Le composant est ensuite monté sur le domaine
+  },
+  updated() {
+   console.log(&quot;updated&quot;)
+   &#x2F;&#x2F;Si une variable dans le composant est changée, il change sur le domaine. Il est donc &quot;updated&quot;
+  },
+  unmounted() {
+    console.log(&quot;unmounted&quot;)
+    &#x2F;&#x2F;Si ma fonction toggleForm fait disparaître le composant avec v-if. Il est supprimé du domaine et donc enlevé
   }
 })</code></pre>
-<h3 id="Composants-basique-formulaire-methode"><a href="#Composants-basique-formulaire-methode" class="headerlink" title="Composants basique - formulaire méthode"></a>Composants basique - formulaire méthode</h3><p>Création d’un composant basique - avec une méthode</p>
-<h4 id="HTML-1"><a href="#HTML-1" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;</code></pre>
-<h4 id="Script-1"><a href="#Script-1" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
-app.component(&#39;login-form&#39;, {
-  template:&#96;
-  &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt; &#x2F;&#x2F; @submit envoie le formulaire
-  &#x2F;&#x2F; .prevent empêche l&#39;actualisation de la page
-  &#x2F;&#x2F;handleSubmit est ma méthode
-    &lt;h1&gt;Composants - vue.js&lt;&#x2F;h1&gt;
-    &lt;input type&#x3D;&quot;email&quot; &#x2F;&gt;
-    &lt;input type&#x3D;&quot;password&quot; &#x2F;&gt;
-    &lt;button&gt;Log in&lt;&#x2F;button&gt;
-  &lt;&#x2F;form&gt;
-  &#96;,
-  data() {
-    return {
-      title: &#39;Login form&#39;
-    }
-  },
-  methods: {
-    handleSubmit(){
-        console.log(&#39;Submitted&#39;) &#x2F;&#x2F;affiche Submitted quand la méthode est appelée
-    }
-  }
-})</code></pre>
-<h3 id="Composants-basique-formulaire-affichage"><a href="#Composants-basique-formulaire-affichage" class="headerlink" title="Composants basique - formulaire affichage"></a>Composants basique - formulaire affichage</h3><p>Création d’un composant basique - avec affichage à l’envoie</p>
-<h4 id="HTML-2"><a href="#HTML-2" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;</code></pre>
-<h4 id="Script-2"><a href="#Script-2" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
-app.component(&#39;login-form&#39;, {
-  template:&#96;
-  &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt;
-    &lt;h1&gt;Composants - vue.js&lt;&#x2F;h1&gt;
-    &lt;input type&#x3D;&quot;email&quot; v-model&#x3D;&quot;email&quot; &#x2F;&gt; &#x2F;&#x2F;change la valeur de la variable email
-    &lt;input type&#x3D;&quot;password&quot; v-model&#x3D;&quot;password&quot; &#x2F;&gt; &#x2F;&#x2F;change la valeur de la variable password
-    &lt;button&gt;Log in&lt;&#x2F;button&gt;
-  &lt;&#x2F;form&gt;
-  &#96;,
-  data() {
-    return {
-      title: &#39;Login form&#39;,
-      email: &#39;&#39;,
-      password: &#39;&#39;
-    }
-  },
-  methods: {
-    handleSubmit(){
-        console.log(this.email, this.password) &#x2F;&#x2F;affiche les valeurs contenues dans email et password
-    }
-  }
-})</code></pre> 
+
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        custom-input
+    </div>
+    <div class='spoiler-content'>
+        <pre><code>    app.component(&#39;custom-input&#39;, {
+        template: &#96;
+          &lt;label&gt;
+            
+            &lt;input :type&#x3D;&quot;type&quot; v-model&#x3D;&quot;inputValue&quot;&gt;
+          &lt;&#x2F;label&gt;
+        &#96;,
+        props: [&#39;label&#39;, &#39;type&#39;, &#39;modelValue&#39;],
+        computed: { 
+          inputValue: {
+            get(){
+              return this.modelValue
+            },
+            set(value){
+              this.$emit(&#39;update:modelValue&#39;, value)
+            }
+          }
+        }
+    })
+    &#x2F;&#x2F; Monte l&#39;application en fonction de l&#39;id
+    app.mount(&#39;#app&#39;)
+&lt;&#x2F;script&gt;</code></pre>
+    </div>
+</div>
+
+<h2 id="Information"><a href="#Information" class="headerlink" title="Information"></a>Information</h2><blockquote><div style="background-color:powderblue;">
+ A partir de maintenant, j'afficherai l'ensemble avec des balises spoilers pour éviter d'encombrer le visuel.
+ Le code sans spoiler sera la partie éssentiel. 
+</div></blockquote>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
 </div>
 
@@ -415,16 +498,16 @@ app.component(&#39;login-form&#39;, {
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2022/06/16/Programmation/Javascript/1%20Vue.js/4%20Propri%C3%A9t%C3%A9%20Composant/">
+              <a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/7%20Vue%20App%20Installation/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  Propriétés des composants - vue.js
+                  Installation app - vue.js
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2022/06/16/Programmation/Javascript/1%20Vue.js/2%20Evenement/">
-                évenement - vue.js
+              <a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/5%20Boucle/">
+                Boucles - vue.js
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
