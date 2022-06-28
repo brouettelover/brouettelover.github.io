@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		tags | 
+		Curiculum Vitae | 
 	 
 	Blog de BrouetteLover
 	</title>
@@ -163,7 +163,7 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2022/06/28/CV/">
                      
 										    CV
@@ -302,146 +302,91 @@ var _hmt = _hmt || [];
 	<!-- 引入正文 -->
 	<div id="content">
 		<h1 id="article-title">
-	<i class="fa fa-tags" aria-hidden="true"></i>TAGS
+	Curiculum Vitae
 </h1>
-<h2 id="article-title">
-	目前共计 16 个标签
-</h2>
+<div class="article-meta">
+	
+	<span>Brouettelover</span>
+	<span>2022-06-28 16:16:30</span>
+		<div id="article-categories">
+    
+		<span>Categories：</span>
+            
+    
 
+    
+		<span>Tags：</span>
+            
+    
+		</div>
+
+</div>
 
 <div id="article-content">
-	<ul>
-      
-          
-            <li class="menu-item">
-                <span>
-                      <a href="/tags/information/">information(1)</a>
-                </span>
-            </li>
-          
-      
-          
-            <li class="menu-item">
-                <span>
-                      <a href="/tags/variable/">variable(1)</a>
-                </span>
-            </li>
-          
-      
-          
-            <li class="menu-item">
-                <span>
-                      <a href="/tags/event/">event(1)</a>
-                </span>
-            </li>
-          
-      
-          
-            <li class="menu-item">
-                <span>
-                      <a href="/tags/evenement/">evenement(1)</a>
-                </span>
-            </li>
-          
-      
-          
-            <li class="menu-item">
-                <span>
-                      <a href="/tags/composant/">composant(2)</a>
-                </span>
-            </li>
-          
-      
-          
-            <li class="menu-item">
-                <span>
-                      <a href="/tags/proprietes/">propriétés(1)</a>
-                </span>
-            </li>
-          
-      
-          
-            <li class="menu-item">
-                <span>
-                      <a href="/tags/props/">props(1)</a>
-                </span>
-            </li>
-          
-      
-          
-            <li class="menu-item">
-                <span>
-                      <a href="/tags/v-for/">v-for(1)</a>
-                </span>
-            </li>
-          
-      
-          
-            <li class="menu-item">
-                <span>
-                      <a href="/tags/boucle/">boucle(1)</a>
-                </span>
-            </li>
-          
-      
-          
-            <li class="menu-item">
-                <span>
-                      <a href="/tags/updated/">updated(1)</a>
-                </span>
-            </li>
-          
-      
-          
-            <li class="menu-item">
-                <span>
-                      <a href="/tags/mounted/">mounted(1)</a>
-                </span>
-            </li>
-          
-      
-          
-            <li class="menu-item">
-                <span>
-                      <a href="/tags/unmounted/">unmounted(1)</a>
-                </span>
-            </li>
-          
-      
-          
-            <li class="menu-item">
-                <span>
-                      <a href="/tags/created/">created(1)</a>
-                </span>
-            </li>
-          
-      
-          
-            <li class="menu-item">
-                <span>
-                      <a href="/tags/Installation/">Installation(1)</a>
-                </span>
-            </li>
-          
-      
-          
-            <li class="menu-item">
-                <span>
-                      <a href="/tags/Node-js/">Node.js(1)</a>
-                </span>
-            </li>
-          
-      
-          
-            <li class="menu-item">
-                <span>
-                      <a href="/tags/npm/">npm(1)</a>
-                </span>
-            </li>
-          
-      
-	</ul>
+	<p>Bienvenue sur la page réservé à mon CV</p>
+<p>Choose the version :</p>
+<div id="app" v-cloack>
+    <button @click="toggle('FR')"> FR </button>
+    <button @click="toggle('EN')"> EN </button>
+    <div v-if="ToggleFr">
+    fsfsdfsdfgdfgdgdgdgdf
+    
+<pre><code>&lt;/div&gt;
+&lt;div v-if=&quot;ToggleEn&quot;&gt;
+fdsfsfsd
+&lt;/div&gt;
+</code></pre>
 </div>
+
+
+<script src="https://unpkg.com/vue@next"></script>
+<script>
+    let app = Vue.createApp({
+        data() {
+            return {
+                ToggleFr : false,
+                ToggleEn : false
+            }
+        },
+        methods: {
+            toggle(value){
+                if(value == 'FR'){
+                    this.ToggleFr = !this.ToggleFr
+                }
+                else if(value == 'EN'){
+                    this.ToggleEn = !this.ToggleEn
+                }
+                console.log(value)
+            }
+        },
+    })
+    app.mount('#app')
+
+</script><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/7%20Vue%20App%20Installation/">
+                Installation app - vue.js
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+
+<script>
+	
+	
+</script>
 	</div>
 	<div id="footer">
 	<p>
