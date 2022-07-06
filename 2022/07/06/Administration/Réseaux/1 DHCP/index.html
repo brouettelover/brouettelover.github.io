@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		Composants - vue.js | 
+		DHCP Protocole | 
 	 
 	Blog de BrouetteLover
 	</title>
@@ -136,7 +136,7 @@ var _hmt = _hmt || [];
 									</a>
 									
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2022/07/06/Administration/R%C3%A9seaux/1%20DHCP/">
                      
 										    1 DHCP
@@ -286,7 +286,7 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/3%20Composant/">
                      
 										    3 Composant
@@ -360,48 +360,20 @@ var _hmt = _hmt || [];
 	<!-- 引入正文 -->
 	<div id="content">
 		<h1 id="article-title">
-	Composants - vue.js
+	DHCP Protocole
 </h1>
 <div class="article-meta">
 	
 	<span>Brouettelover</span>
-	<span>2022-06-20 11:45:06</span>
+	<span>2022-07-06 21:44:25</span>
 		<div id="article-categories">
     
 		<span>Categories：</span>
-            
-                
-                    <span>
-                        <i class="fa fa-folder" aria-hidden="true">
-                        <a href="/categories/Javascript/">Javascript</a>
-                        </i>
-                      
-                        >
-                      
-                    </span>
-                
-            
-                
-                    <span>
-                        <i class="fa fa-folder" aria-hidden="true">
-                        <a href="/categories/Javascript/vue-js/">vue.js</a>
-                        </i>
-                      
-                    </span>
-                
             
     
 
     
 		<span>Tags：</span>
-            
-                
-                    <span>
-                        <i class="fa fa-tag" aria-hidden="true">
-                        <a href="/tags/composant/">composant</a>
-                        </i>
-                    </span>
-                
             
     
 		</div>
@@ -409,91 +381,18 @@ var _hmt = _hmt || [];
 </div>
 
 <div id="article-content">
-	<h2 id="Composants"><a href="#Composants" class="headerlink" title="Composants"></a>Composants</h2><h3 id="Composants-basique-formulaire"><a href="#Composants-basique-formulaire" class="headerlink" title="Composants basique - formulaire"></a>Composants basique - formulaire</h3><p>Création d’un composant basique sous forme de formulaire avec l’utilisation d’un template et d’une variable</p>
-<h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;
-&lt;!-- login-form est le composant que j&#39;ai créé --&gt;</code></pre>
-<h4 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
-app.component(&#39;login-form&#39;, { &#x2F;&#x2F;nom de mon composant &quot;login-form&quot;
-  template:&#96; &#x2F;&#x2F;structure html interne
-  &lt;div&gt;
-    &lt;h1&gt;Composants - vue.js&lt;&#x2F;h1&gt;
-    &lt;input type&#x3D;&quot;email&quot; &#x2F;&gt;
-    &lt;input type&#x3D;&quot;password&quot; &#x2F;&gt;
-  &lt;&#x2F;div&gt;
-  &#96;,
-  data() {
-    return {
-      title: &#39;Login form&#39; &#x2F;&#x2F;Variable interne du composant
-    }
-  }
-})</code></pre>
-<h3 id="Composants-basique-formulaire-methode"><a href="#Composants-basique-formulaire-methode" class="headerlink" title="Composants basique - formulaire méthode"></a>Composants basique - formulaire méthode</h3><p>Création d’un composant basique - avec une méthode</p>
-<h4 id="HTML-1"><a href="#HTML-1" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;</code></pre>
-<h4 id="Script-1"><a href="#Script-1" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
-app.component(&#39;login-form&#39;, {
-  template:&#96;
-  &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt; &#x2F;&#x2F; @submit envoie le formulaire
-  &#x2F;&#x2F; .prevent empêche l&#39;actualisation de la page
-  &#x2F;&#x2F;handleSubmit est ma méthode
-    &lt;h1&gt;Composants - vue.js&lt;&#x2F;h1&gt;
-    &lt;input type&#x3D;&quot;email&quot; &#x2F;&gt;
-    &lt;input type&#x3D;&quot;password&quot; &#x2F;&gt;
-    &lt;button&gt;Log in&lt;&#x2F;button&gt;
-  &lt;&#x2F;form&gt;
-  &#96;,
-  data() {
-    return {
-      title: &#39;Login form&#39;
-    }
-  },
-  methods: {
-    handleSubmit(){
-        console.log(&#39;Submitted&#39;) &#x2F;&#x2F;affiche Submitted quand la méthode est appelée
-    }
-  }
-})</code></pre>
-<h3 id="Composants-basique-formulaire-affichage"><a href="#Composants-basique-formulaire-affichage" class="headerlink" title="Composants basique - formulaire affichage"></a>Composants basique - formulaire affichage</h3><p>Création d’un composant basique - avec affichage à l’envoie</p>
-<h4 id="HTML-2"><a href="#HTML-2" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;</code></pre>
-<h4 id="Script-2"><a href="#Script-2" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
-app.component(&#39;login-form&#39;, {
-  template:&#96;
-  &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt;
-    &lt;h1&gt;Composants - vue.js&lt;&#x2F;h1&gt;
-    &lt;input type&#x3D;&quot;email&quot; v-model&#x3D;&quot;email&quot; &#x2F;&gt; &#x2F;&#x2F;change la valeur de la variable email
-    &lt;input type&#x3D;&quot;password&quot; v-model&#x3D;&quot;password&quot; &#x2F;&gt; &#x2F;&#x2F;change la valeur de la variable password
-    &lt;button&gt;Log in&lt;&#x2F;button&gt;
-  &lt;&#x2F;form&gt;
-  &#96;,
-  data() {
-    return {
-      title: &#39;Login form&#39;,
-      email: &#39;&#39;,
-      password: &#39;&#39;
-    }
-  },
-  methods: {
-    handleSubmit(){
-        console.log(this.email, this.password) &#x2F;&#x2F;affiche les valeurs contenues dans email et password
-    }
-  }
-})</code></pre> 
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+	<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
 </div>
 
 
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/4%20Propri%C3%A9t%C3%A9%20Composant/">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  Propriétés des composants - vue.js
-              </a>
-            
         </div>
         <div class="item right">
             
-              <a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/2%20Evenement/">
-                évenement - vue.js
+              <a href="/2022/07/06/Administration/R%C3%A9seaux/DHCP/">
+                DHCP Protocole
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
