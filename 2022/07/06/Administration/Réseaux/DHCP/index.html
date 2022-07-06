@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		3 PXE serveur | 
+		DHCP Protocole | 
 	 
 	Blog de BrouetteLover
 	</title>
@@ -158,7 +158,7 @@ var _hmt = _hmt || [];
 									</a>
 									
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2022/07/06/Administration/R%C3%A9seaux/DHCP/">
                      
 										    DHCP
@@ -209,7 +209,7 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2022/07/06/Administration/System/A%20Linux/3%20PXE%20serveur/">
                      
 										    3 PXE serveur
@@ -371,20 +371,64 @@ var _hmt = _hmt || [];
 	<!-- 引入正文 -->
 	<div id="content">
 		<h1 id="article-title">
-	3 PXE serveur
+	DHCP Protocole
 </h1>
 <div class="article-meta">
 	
 	<span>Brouettelover</span>
-	<span>2022-07-06 18:55:37</span>
+	<span>2022-07-06 23:28:55</span>
 		<div id="article-categories">
     
 		<span>Categories：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/Reseau/">Réseau</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/Reseau/Administration/">Administration</a>
+                        </i>
+                      
+                    </span>
+                
             
     
 
     
 		<span>Tags：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/DHCP/">DHCP</a>
+                        </i>
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/Protocole/">Protocole</a>
+                        </i>
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/Fonctionnement/">Fonctionnement</a>
+                        </i>
+                    </span>
+                
             
     
 		</div>
@@ -392,23 +436,24 @@ var _hmt = _hmt || [];
 </div>
 
 <div id="article-content">
-	<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+	<h2 id="Schema"><a href="#Schema" class="headerlink" title="Schéma"></a>Schéma</h2><p><img src="/images/r%C3%A9seau/DHCP.jpg"></p>
+<h2 id="Fonctionnement"><a href="#Fonctionnement" class="headerlink" title="Fonctionnement"></a>Fonctionnement</h2><p>Le protocole DHCP fonctionne en couche 2 du modèle osi. Soit la couche qu’on appelle Liaison.<br>L’envoie de données se fait sous forme de trame.<br><img src="/images/r%C3%A9seau/request1.jpg"></p>
+<p>La première requête se fait par le client qui envoie un message discover. Qui s’envoie sur l’ensemble du réseau pour intérroger un serveur DHCP. Il envoie donc une trame à l’adresse FF:FF:FF:FF:FF:FF<br><img src="/images/r%C3%A9seau/request2.jpg"></p>
+<p>Le serveur répond alors avec l’adresse source de la trame précédente et envoie l’ip du client et la configuration.<br><img src="/images/r%C3%A9seau/request3.jpg"></p>
+<p>Le client envoie un DHCP request pour dire que les paramètres sont bons en broadcast.<br>Il envoie en broadcast car le client n’a pas encore configuré son adresse.<br><img src="/images/r%C3%A9seau/request4.jpg"></p>
+<p>Le serveur envoie envoie pour finir en unicast au client l’accusé de réception.</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
 </div>
 
 
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2022/07/06/Administration/System/A%20Linux/2%20DHCP%20serveur/">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  2 DHCP serveur
-              </a>
-            
         </div>
         <div class="item right">
             
-              <a href="/2022/07/06/Administration/System/A%20Linux/4%20ADguard%20DNS%20serveur/">
-                4 ADguard DNS serveur
+              <a href="/2022/07/06/Administration/Network/1%20DHCP/">
+                DHCP Protocole
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
