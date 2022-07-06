@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		Boucles - vue.js | 
+		POP | 
 	 
 	Blog de BrouetteLover
 	</title>
@@ -147,7 +147,7 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2022/07/06/Administration/R%C3%A9seaux/POP/">
                      
 										    POP
@@ -308,7 +308,7 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/5%20Boucle/">
                      
 										    5 Boucle
@@ -360,56 +360,20 @@ var _hmt = _hmt || [];
 	<!-- 引入正文 -->
 	<div id="content">
 		<h1 id="article-title">
-	Boucles - vue.js
+	POP
 </h1>
 <div class="article-meta">
 	
 	<span>Brouettelover</span>
-	<span>2022-06-20 11:45:07</span>
+	<span>2022-07-06 23:20:22</span>
 		<div id="article-categories">
     
 		<span>Categories：</span>
-            
-                
-                    <span>
-                        <i class="fa fa-folder" aria-hidden="true">
-                        <a href="/categories/Javascript/">Javascript</a>
-                        </i>
-                      
-                        >
-                      
-                    </span>
-                
-            
-                
-                    <span>
-                        <i class="fa fa-folder" aria-hidden="true">
-                        <a href="/categories/Javascript/vue-js/">vue.js</a>
-                        </i>
-                      
-                    </span>
-                
             
     
 
     
 		<span>Tags：</span>
-            
-                
-                    <span>
-                        <i class="fa fa-tag" aria-hidden="true">
-                        <a href="/tags/v-for/">v-for</a>
-                        </i>
-                    </span>
-                
-            
-                
-                    <span>
-                        <i class="fa fa-tag" aria-hidden="true">
-                        <a href="/tags/boucle/">boucle</a>
-                        </i>
-                    </span>
-                
             
     
 		</div>
@@ -417,121 +381,18 @@ var _hmt = _hmt || [];
 </div>
 
 <div id="article-content">
-	<h2 id="Boucles"><a href="#Boucles" class="headerlink" title="Boucles"></a>Boucles</h2><h3 id="Boucle-simple"><a href="#Boucle-simple" class="headerlink" title="Boucle simple"></a>Boucle simple</h3><p>Utilisation simple d’une boucle dans vue.js</p>
-<h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;</code></pre>
-<h4 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
-   app.component(&#39;login-form&#39;, {
-  template:&#96;
-  &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt;
-     &lt;p v-for&#x3D;&quot;(str, i) in inputs&quot; :key&#x3D;&quot;str&quot;&gt; &lt;&#x2F;p&gt;
-    &lt;!-- key est une propriété obligatoire d&#39;une loop qui doit être unique par boucle, l&#39;explication arrivera plus tard --&gt;
-    &lt;!-- pour chaque str dans inputs afficher la valeur de str soit -&gt; email,password,name --&gt;
-    &lt;!-- i est l&#39;index de chaque élément de ma boucle -&gt; soit 0 pour email, 1 pour password, 2 pour name --&gt;
-  &lt;&#x2F;form&gt;
-  &#96;,
-  components: [&#39;custom-input&#39;],
-  data() {
-    return {
-      title: &#39;Login form&#39;,
-      inputs: [
-        &#39;email&#39;,
-        &#39;password&#39;,
-        &#39;name&#39;
-      ] &#x2F;&#x2F;tableau des inputs dans lequel str va boucler
-    }
-  }</code></pre>
-
-<h3 id="Boucle-un-nouveau-type-d’input"><a href="#Boucle-un-nouveau-type-d’input" class="headerlink" title="Boucle - un nouveau type d’input"></a>Boucle - un nouveau type d’input</h3><p>Utilisation d’une boucle dans mes inputs pour ne plus utiliser qu’un seul custom-input qui boucle sur l’objet inputs</p>
-<h4 id="HTML-1"><a href="#HTML-1" class="headerlink" title="HTML"></a>HTML</h4><pre><code>&lt;login-form &#x2F;&gt;</code></pre>
-<h4 id="Script-1"><a href="#Script-1" class="headerlink" title="Script"></a>Script</h4><pre><code>&#x2F;&#x2F;à mettre après la création de l&#39;app (let app &#x3D; Vue.createApp({...})
-app.component(&#39;login-form&#39;, {
-  template:&#96;
-  &lt;form @submit.prevent&#x3D;&quot;handleSubmit&quot;&gt;
-    &lt;h1&gt;Boucles - vue.js&lt;&#x2F;h1&gt;
-    &lt;custom-input
-      v-for&#x3D;&quot;(input, i) in inputs&quot;
-      :key&#x3D;&quot;i&quot;
-      v-model&#x3D;&quot;input.value&quot;
-      :label&#x3D;&quot;input.label&quot;
-      :type&#x3D;&quot;input.type&quot;
-    &#x2F;&gt;
-    &lt;!-- pour chaque input dans mon objet inputs --&gt;
-    &lt;!-- l&#39;index est ma clef --&gt;
-    &lt;!-- v-model prend la valeur d&#39;input.value qui correspond à &quot;valeur d&#39;email&quot;, &quot;valeur de password&quot; --&gt;
-    &lt;!-- label change aussi en fonction de la boucle soit à Email, Password --&gt;
-    &lt;!-- maintenant nous pouvons aussi modifier le type pour chaque input grâçe à notre boucle --&gt;
-    &lt;!-- le type prendra alors la valeur soit email, password --&gt;
-    &lt;button&gt;Log in&lt;&#x2F;button&gt;
-  &lt;&#x2F;form&gt;
-  &#96;,
-  components: [&#39;custom-input&#39;],
-  data() {
-    return {
-      title: &#39;Login form&#39;,
-      inputs: [ &#x2F;&#x2F;mon tableau d&#39;objets inputs
-        {
-          label: &#39;Email&#39;, &#x2F;&#x2F;input.label dans ma boucle
-          value: &#39;&#39;, &#x2F;&#x2F;input.value dans ma boucle
-          type: &#39;email&#39; &#x2F;&#x2F;input.type dans ma boucle
-        },
-        {
-          label: &#39;Password&#39;,
-          value: &#39;&#39;,
-          type: &#39;password&#39;
-        }
-      ],
-      email: &#39;&#39;,
-      password: &#39;&#39;,
-      emailLabel: &#39;Email&#39;,
-      passwordLabel: &#39;Password&#39;
-    }
-  },
-  methods: {
-    handleSubmit(){
-        console.log(this.inputs[0].value, this.inputs[1].value)
-        &#x2F;&#x2F;affiche la valeur d&#39;inputs à l&#39;index 0 et à l&#39;index 1
-        &#x2F;&#x2F;soit email et password
-    }
-  }
-})
-app.component(&#39;custom-input&#39;, {
-    template: &#96;
-      &lt;label&gt;
-        
-        &lt;input :type&#x3D;&quot;type&quot; v-model&#x3D;&quot;inputValue&quot;&gt;
-        &#x2F;&#x2F;on utilise donc la valeur &quot;type&quot; donné par le parent via la fonction :
-      &lt;&#x2F;label&gt;
-    &#96;,
-    props: [&#39;label&#39;, &#39;type&#39;, &#39;modelValue&#39;],
-    &#x2F;&#x2F;vu qu&#39;on utilise le type extérieur on intègre la propriété du parent &#39;type&#39; grâce au v-bind
-    computed: {
-      inputValue: {
-        get(){
-          return this.modelValue
-        },
-        set(value){
-          this.$emit(&#39;update:modelValue&#39;, value)
-        }
-      }
-    }
-})</code></pre> 
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+	<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
 </div>
 
 
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/6%20Cycle%20De%20Vie/">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  Cycle de vie - vue.js
-              </a>
-            
         </div>
         <div class="item right">
             
-              <a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/4%20Propri%C3%A9t%C3%A9%20Composant/">
-                Propriétés des composants - vue.js
+              <a href="/2022/07/06/Administration/R%C3%A9seaux/DHCP/">
+                DHCP Protocole
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
