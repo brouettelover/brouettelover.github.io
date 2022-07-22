@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		4 ADguard DNS serveur | 
+		8 Vue CLI | 
 	 
 	Blog de BrouetteLover
 	</title>
@@ -209,7 +209,7 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/4%20ADguard%20DNS%20serveur/">
                      
 										    4 ADguard DNS serveur
@@ -341,7 +341,7 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2022/07/11/Programmation/Javascript/1%20Vue.js/8%20Vue%20CLI/">
                      
 										    8 Vue CLI
@@ -371,20 +371,64 @@ var _hmt = _hmt || [];
 	<!-- 引入正文 -->
 	<div id="content">
 		<h1 id="article-title">
-	4 ADguard DNS serveur
+	8 Vue CLI
 </h1>
 <div class="article-meta">
 	
 	<span>Brouettelover</span>
-	<span>2022-07-06 18:55:37</span>
+	<span>2022-07-11 17:59:30</span>
 		<div id="article-categories">
     
 		<span>Categories：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/Javascript/">Javascript</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/Javascript/vue-js/">vue.js</a>
+                        </i>
+                      
+                    </span>
+                
             
     
 
     
 		<span>Tags：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/Node-js/">Node.js</a>
+                        </i>
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/npm/">npm</a>
+                        </i>
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/CLI/">CLI</a>
+                        </i>
+                    </span>
+                
             
     
 		</div>
@@ -392,23 +436,137 @@ var _hmt = _hmt || [];
 </div>
 
 <div id="article-content">
-	<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+	<h2 id="Arborescence"><a href="#Arborescence" class="headerlink" title="Arborescence"></a>Arborescence</h2><p><img src="/images/vuejs/clitree.png"></p>
+<h3 id="node-modules"><a href="#node-modules" class="headerlink" title="node_modules"></a>node_modules</h3><p>Ce dossier reprend l’ensemble des plugins de vue.js </p>
+<h3 id="public"><a href="#public" class="headerlink" title="public"></a>public</h3><hr>
+<h3 id="components"><a href="#components" class="headerlink" title="components"></a>components</h3><p>Ce dossier comprends l’ensemble des composants réutilisable par d’autres composants.<br>Il représente des parties de pages par exemple: une barre de navigation ou un menu.</p>
+<h3 id="router"><a href="#router" class="headerlink" title="router"></a>router</h3><p>Ce dossier reprend l’ensemble des routes pour une single page application.</p>
+<h4 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h4><pre><code>import { createRouter, createWebHistory } from &#39;vue-router&#39; &#x2F;&#x2F;importe le router de vue.js
+import LoginView from &#39;@&#x2F;views&#x2F;home&#x2F;LoginView.vue&#39; &#x2F;&#x2F;ajoute la page LoginView
+import RegisterView from &#39;@&#x2F;views&#x2F;home&#x2F;RegisterView.vue&#39; &#x2F;&#x2F;ajoute la page RegisterView
+import LostView from &#39;@&#x2F;views&#x2F;home&#x2F;LostView.vue&#39; &#x2F;&#x2F;ajoute la page LostView
+import DashboardView from &#39;@&#x2F;views&#x2F;modules&#x2F;DashboardView.vue&#39; &#x2F;&#x2F;ajoute la page DashboardView
+
+const routes &#x3D; [ &#x2F;&#x2F;Liste l&#39;ensemble des routes
+  {
+    path: &#39;&#x2F;&#39;,  &#x2F;&#x2F;route d&#39;arrivé sur le &#x2F; page d&#39;acceuil
+    name: &#39;home&#39;,
+    component: LoginView
+  },
+  {
+    path: &#39;&#x2F;register&#39;,  &#x2F;&#x2F; route qui mène vers le &#x2F;register -&gt; soit la page RegisterView
+    name: &#39;register&#39;,
+    component: RegisterView
+  },
+  {
+    path: &#39;&#x2F;lost&#39;, &#x2F;&#x2F; route qui mène vers le &#x2F;lost -&gt; soit la page LostView
+    name: &#39;lost&#39;,
+    component: LostView
+  },
+  {
+    path: &#39;&#x2F;dashboard&#39;, &#x2F;&#x2F; route qui mène vers le &#x2F;dashboard -&gt; soit la page DashboardView
+    name: &#39;dashboard&#39;,
+    component: DashboardView
+  }
+]
+
+const router &#x3D; createRouter({
+  history: createWebHistory(process.env.BASE_URL),  &#x2F;&#x2F; utilise la version avec &#x2F; plutôt que #
+  routes
+})
+
+export default router  &#x2F;&#x2F; export le router pour qu&#39;il puisse être utilisé sur d&#39;autres pages
+</code></pre>
+
+<h3 id="views"><a href="#views" class="headerlink" title="views"></a>views</h3><p>Contient l’ensemble des pages Vue.<br>Les pages sont diviser par 3 :<br>  -&gt;  Une section template qui reprend le code HTML.<br>  -&gt;  Une partie script qui reprend les fonctions et les variables Javascript.<br>  -&gt;  Une partie style pouvant être scoped (pour limité à la page), cette partie contient le css</p>
+<pre><code>________________HTML________________
+&lt;template&gt;
+&lt;form class&#x3D;&quot;form-signin&quot; method&#x3D;&quot;POST&quot; action&#x3D;&quot;&#x2F;login&quot;&gt;
+  &lt;div class&#x3D;&quot;imgcontainer&quot;&gt;
+    &lt;img src&#x3D;&quot;@&#x2F;assets&#x2F;img&#x2F;logo.png&quot; alt&#x3D;&quot;Logo&quot; class&#x3D;&quot;logo&quot;&gt;
+  &lt;&#x2F;div&gt;
+
+  &lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;label for&#x3D;&quot;uname&quot;&gt;&lt;b&gt;Nom de compte&lt;&#x2F;b&gt;&lt;&#x2F;label&gt;
+    &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Entrez votre nom de compte&quot; name&#x3D;&quot;username&quot; pattern&#x3D;&quot;(?&#x3D;[a-z]).{4,}&quot; required&gt;
+
+    &lt;label for&#x3D;&quot;psw&quot;&gt;&lt;b&gt;Mot de passe&lt;&#x2F;b&gt;&lt;&#x2F;label&gt;
+    &lt;input type&#x3D;&quot;password&quot; placeholder&#x3D;&quot;Entrez votre mot de passe&quot; name&#x3D;&quot;password&quot; required&gt;
+    &lt;button type&#x3D;&quot;submit&quot;&gt;Login&lt;&#x2F;button&gt;
+    &lt;span class&#x3D;&quot;psw&quot;&gt;&lt;a href&#x3D;&quot;&#x2F;lost&quot;&gt;Mot de passe oublié?&lt;&#x2F;a&gt;&lt;&#x2F;span&gt;
+    &lt;span class&#x3D;&quot;register&quot;&gt;&lt;a href&#x3D;&quot;&#x2F;register&quot;&gt;S&#39;enregistrer&lt;&#x2F;a&gt;&lt;&#x2F;span&gt;
+  &lt;&#x2F;div&gt;
+
+&lt;&#x2F;form&gt;
+&lt;&#x2F;template&gt;
+________________CSS________________
+&lt;style&gt; 
+  @import &#39;@&#x2F;assets&#x2F;css&#x2F;login.sass&#39;; &#x2F;&#x2F;Import le css d&#39;un fichier externe
+
+&lt;&#x2F;style&gt;
+_____________Javascript_____________
+&lt;script&gt;
+
+export default {
+  name: &#39;LoginView&#39; &#x2F;&#x2F;rend la page accessible sur les autres pages
+}
+&lt;&#x2F;script&gt;</code></pre>
+
+<h3 id="App-vue"><a href="#App-vue" class="headerlink" title="App.vue"></a>App.vue</h3><p>équivalent d’un header ou d’un footer à la création d’un projet vue cli.</p>
+<pre><code>_________________HTML_________________
+&lt;template&gt;
+  &lt;nav&gt; &#x2F;&#x2F;router-link est une balise permettant d&#39;utiliser les route définie dans index.js
+    &lt;router-link to&#x3D;&quot;&#x2F;&quot;&gt;Home&lt;&#x2F;router-link&gt; |
+    &lt;router-link to&#x3D;&quot;&#x2F;register&quot;&gt;register&lt;&#x2F;router-link&gt; |
+    &lt;router-link to&#x3D;&quot;&#x2F;dashboard&quot;&gt;dashboard&lt;&#x2F;router-link&gt;
+  &lt;&#x2F;nav&gt;
+  &lt;router-view&#x2F;&gt; &#x2F;&#x2F;indique d&#39;utiliser le router de vue
+&lt;&#x2F;template&gt;
+__________________CSS__________________
+&lt;style lang&#x3D;&quot;scss&quot;&gt;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &amp;.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+&lt;&#x2F;style&gt;</code></pre>
+
+<h3 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h3><p>Comporte le code permettant de construire l’application.</p>
+<pre><code>import { createApp } from &#39;vue&#39; &#x2F;&#x2F;importe les librairies
+import App from &#39;.&#x2F;App.vue&#39;
+import &#39;.&#x2F;registerServiceWorker&#39;
+import router from &#39;.&#x2F;router&#39;
+
+createApp(App).use(router).mount(&#39;#app&#39;) &#x2F;&#x2F;créer l&#39;application</code></pre>
+
+<h3 id="tests"><a href="#tests" class="headerlink" title="tests"></a>tests</h3><p>?</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
 </div>
 
 
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/2%20DHCP%20serveur/">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  2 DHCP serveur
-              </a>
-            
         </div>
         <div class="item right">
             
-              <a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/3%20PXE%20serveur/">
-                3 PXE serveur
+              <a href="/2022/07/06/Administration/R%C3%A9seau/2%20STP/">
+                2 STP
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
