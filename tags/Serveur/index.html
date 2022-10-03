@@ -8,8 +8,6 @@
 	<!-- title -->
 	
 	<title>
-	
-		DHCP | 
 	 
 	Blog de BrouetteLover
 	</title>
@@ -136,7 +134,7 @@ var _hmt = _hmt || [];
 									</a>
 									
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2022/07/06/Administration/R%C3%A9seau/1%20DHCP/">
                      
 										    1 DHCP
@@ -370,108 +368,50 @@ var _hmt = _hmt || [];
 
 	<!-- 引入正文 -->
 	<div id="content">
-		<h1 id="article-title">
-	DHCP
-</h1>
-<div class="article-meta">
+		<div id="index">
 	
-	<span>Brouettelover</span>
-	<span>2022-07-06 23:52:34</span>
-		<div id="article-categories">
-    
-		<span>Categories：</span>
-            
-                
-                    <span>
-                        <i class="fa fa-folder" aria-hidden="true">
-                        <a href="/categories/Reseau/">Réseau</a>
-                        </i>
-                      
-                        >
-                      
-                    </span>
-                
-            
-                
-                    <span>
-                        <i class="fa fa-folder" aria-hidden="true">
-                        <a href="/categories/Reseau/Administration/">Administration</a>
-                        </i>
-                      
-                    </span>
-                
-            
-    
-
-    
-		<span>Tags：</span>
-            
-                
-                    <span>
-                        <i class="fa fa-tag" aria-hidden="true">
-                        <a href="/tags/DHCP/">DHCP</a>
-                        </i>
-                    </span>
-                
-            
-                
-                    <span>
-                        <i class="fa fa-tag" aria-hidden="true">
-                        <a href="/tags/Protocole/">Protocole</a>
-                        </i>
-                    </span>
-                
-            
-                
-                    <span>
-                        <i class="fa fa-tag" aria-hidden="true">
-                        <a href="/tags/Fonctionnement/">Fonctionnement</a>
-                        </i>
-                    </span>
-                
-            
-    
-		</div>
-
+		<div class="index-li">
+			<a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/2%20DHCP%20serveur/">
+				<h2 class="index-title">
+					DHCP serveur
+				</h2>
+				<div class="index-brief">
+					Installation sur un serveur Oracle LinuxTout d’abord, il faut installer un serveur DHCP.Pour se faire, j’utilise DNSmasq. Le choix étant fait pour cer
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2022-07-06</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/Systeme/">Système</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/Systeme/Administration/">Administration</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>	
+	
+	
+	<div id="index-paginator">
+		
+	</div>
 </div>
 
-<div id="article-content">
-	<h2 id="Schema"><a href="#Schema" class="headerlink" title="Schéma"></a>Schéma</h2><p><img src="/images/r%C3%A9seau/DHCP.jpg"></p>
-<h2 id="Fonctionnement-DHCP-Dynamic-Host-configuration-Protocole"><a href="#Fonctionnement-DHCP-Dynamic-Host-configuration-Protocole" class="headerlink" title="Fonctionnement DHCP [Dynamic Host configuration Protocole]"></a>Fonctionnement DHCP [Dynamic Host configuration Protocole]</h2><p>Le protocole DHCP fonctionne en couche 2 du modèle osi. Soit la couche qu’on appelle liaison de données.<br>L’envoie de données se fait sous forme de trame.<br><img src="/images/r%C3%A9seau/request1.jpg"></p>
-<h4 id="DHCP-discover"><a href="#DHCP-discover" class="headerlink" title="DHCP discover"></a>DHCP discover</h4><p>La première requête se fait par le client qui envoie un message <strong>discover</strong>. Qui s’envoie sur l’ensemble du réseau pour intérroger un serveur DHCP. Il envoie donc une trame à l’adresse <strong>FF:FF:FF:FF:FF:FF</strong><br><img src="/images/r%C3%A9seau/request2.jpg"></p>
-<h4 id="DHCP-offer"><a href="#DHCP-offer" class="headerlink" title="DHCP offer"></a>DHCP offer</h4><p>Le serveur répond alors avec l’adresse source de la trame précédente et envoie l’ip du client et la configuration.<br><img src="/images/r%C3%A9seau/request3.jpg"></p>
-<h4 id="DHCP-request"><a href="#DHCP-request" class="headerlink" title="DHCP request"></a>DHCP request</h4><p>Le client envoie un DHCP request pour dire que les paramètres sont bons en <strong>broadcast</strong>.<br>Il envoie en <strong>broadcast</strong> car le client n’a pas encore configuré son adresse.<br><img src="/images/r%C3%A9seau/request4.jpg"></p>
-<h4 id="DHCP-Ack"><a href="#DHCP-Ack" class="headerlink" title="DHCP Ack"></a>DHCP Ack</h4><p>Le serveur envoie envoie pour finir en unicast au client l’accusé de réception.</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
-</div>
-
-
-    <div class="post-guide">
-        <div class="item left">
-            
-              <a href="/2022/07/06/Administration/R%C3%A9seau/2%20STP/">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  2 STP
-              </a>
-            
-        </div>
-        <div class="item right">
-            
-              <a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/2%20DHCP%20serveur/">
-                DHCP serveur
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-              </a>
-            
-        </div>
-    </div>
-
-
-
-
-<script>
-	
-	
-</script>
 	</div>
 	<div id="footer">
 	<p>
