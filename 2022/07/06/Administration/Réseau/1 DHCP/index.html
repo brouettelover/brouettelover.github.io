@@ -442,7 +442,16 @@ var _hmt = _hmt || [];
 <h4 id="DHCP-offer"><a href="#DHCP-offer" class="headerlink" title="DHCP offer"></a>DHCP offer</h4><p>Le serveur répond alors avec l’adresse source de la trame précédente et envoie l’ip du client et la configuration.<br><img src="/images/r%C3%A9seau/request3.jpg"></p>
 <h4 id="DHCP-request"><a href="#DHCP-request" class="headerlink" title="DHCP request"></a>DHCP request</h4><p>Le client envoie un DHCP request pour dire que les paramètres sont bons en <strong>broadcast</strong>.<br>Il envoie en <strong>broadcast</strong> car le client n’a pas encore configuré son adresse.<br><img src="/images/r%C3%A9seau/request4.jpg"></p>
 <h4 id="DHCP-Ack"><a href="#DHCP-Ack" class="headerlink" title="DHCP Ack"></a>DHCP Ack</h4><p>Le serveur envoie envoie pour finir en unicast au client l’accusé de réception.</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+<h2 id="Installation-sur-un-serveur-Oracle-Linux"><a href="#Installation-sur-un-serveur-Oracle-Linux" class="headerlink" title="Installation sur un serveur Oracle Linux"></a>Installation sur un serveur Oracle Linux</h2><p>Tout d’abord, il faut installer un serveur DHCP.<br>Pour se faire, j’utilise DNSmasq. Le choix étant fait pour certaines options que le service permet.</p>
+<pre><code>interface&#x3D;eno1,lo #interface fournissant le DHCP
+port&#x3D;0 #Port par défaut d&#39;écoute
+# DHCP range-leases
+dhcp-range&#x3D; eno1,192.168.0.150,192.168.0.200,255.255.255.0,6h #Range d&#39;ip de 150 à 200 avec 6h de bail
+# Gateway
+dhcp-option&#x3D;3,192.168.0.1 #Fournit l&#39;adresse de la passerelle par défaut à tous les utilisateurs
+# DNS
+dhcp-option&#x3D;6,192.168.0.100 #Fournit l&#39;adresse du serveur DNS. J&#39;utilise un DNS personnel mais vous pouvez utiliser des DNS public comme ceux de google sur les adresses : 8.8.8.8 - 8.8.4.4
+</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
 </div>
 
 
