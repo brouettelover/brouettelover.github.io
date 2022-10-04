@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		3 PXE serveur | 
+		DHCP serveur | 
 	 
 	Blog de BrouetteLover
 	</title>
@@ -140,17 +140,6 @@ var _hmt = _hmt || [];
 									<a href="/2022/07/06/Administration/R%C3%A9seau/1%20DHCP/">
                      
 										    1 DHCP
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
-							</ul>
-			
-							<ul>
-								<li class="file">
-									<a href="/2022/07/06/Administration/R%C3%A9seau/2%20STP/">
-                     
-										    2 STP
                      
 									</a>
 								</li>
@@ -371,7 +360,7 @@ var _hmt = _hmt || [];
 	<!-- 引入正文 -->
 	<div id="content">
 		<h1 id="article-title">
-	3 PXE serveur
+	DHCP serveur
 </h1>
 <div class="article-meta">
 	
@@ -381,10 +370,46 @@ var _hmt = _hmt || [];
     
 		<span>Categories：</span>
             
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/Systeme/">Système</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/Systeme/Administration/">Administration</a>
+                        </i>
+                      
+                    </span>
+                
+            
     
 
     
 		<span>Tags：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/Serveur/">Serveur</a>
+                        </i>
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/PXE/">PXE</a>
+                        </i>
+                    </span>
+                
             
     
 		</div>
@@ -392,23 +417,42 @@ var _hmt = _hmt || [];
 </div>
 
 <div id="article-content">
-	<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+	<h2 id="Qu’est-ce-que-c’est"><a href="#Qu’est-ce-que-c’est" class="headerlink" title="Qu’est ce que c’est ?"></a>Qu’est ce que c’est ?</h2><p>Un serveur PXE est un serveur permettant à des ordinateurs connecter sur le réseau de pouvoir installer ou exécuter une image d’un système d’exploitation via le réseau local.</p>
+<h2 id="Installation-sur-un-serveur-Oracle-Linux"><a href="#Installation-sur-un-serveur-Oracle-Linux" class="headerlink" title="Installation sur un serveur Oracle Linux"></a>Installation sur un serveur Oracle Linux</h2><h3 id="DHCP-configuration"><a href="#DHCP-configuration" class="headerlink" title="DHCP configuration"></a>DHCP configuration</h3><p>Tout d’abord, il faut posséder un serveur DHCP. (vous pourrez trouver un tutorial pour configurer un serveur DHCP sur le site)<br>En effet, le serveur DHCP possède une option permettant d’indiquer un serveur PXE.</p>
+<p>Voici la configuration avec DNSmasq (voir tutorial pour les autres détails):</p>
+<pre><code>interface&#x3D;eno1,lo
+port&#x3D;0
+# DHCP range-leases
+dhcp-range&#x3D; eno1,192.168.0.150,192.168.0.200,255.255.255.0,6h
+# PXE 
+dhcp-boot&#x3D;pxelinux.0,pxeserver,192.168.0.100 #Indique l&#39;endroit où se trouve le serveur pxe
+# Gateway
+dhcp-option&#x3D;3,192.168.0.1
+# DNS
+dhcp-option&#x3D;6,192.168.0.100
+
+pxe-prompt&#x3D;&quot;Press F8 for menu.&quot;, 60 # Message afficher lors de la connexion au serveur durant 60 secondes
+pxe-service&#x3D;x86PC, &quot;Install CentOS 7 from network server 192.168.0.100&quot;, pxelinux #Choix de l&#39;option d&#39;installation de l&#39;os dans ce cas ci CentOS
+enable-tftp #Initialise le tftp nécessaire pour récupérer l&#39;image sur le réseau local
+tftp-root&#x3D;&#x2F;var&#x2F;lib&#x2F;tftpboot #Le dossier où est Initialisé le serveur tftp</code></pre>
+
+<h3 id="Installation-du-service"><a href="#Installation-du-service" class="headerlink" title="Installation du service"></a>Installation du service</h3><h3 id="Installation-pour-CentOS-7"><a href="#Installation-pour-CentOS-7" class="headerlink" title="Installation pour CentOS 7"></a>Installation pour CentOS 7</h3><h3 id="Installation-pour-Windows-10"><a href="#Installation-pour-Windows-10" class="headerlink" title="Installation pour Windows 10"></a>Installation pour Windows 10</h3><h3 id="Installation-pour-Oracle-Linux"><a href="#Installation-pour-Oracle-Linux" class="headerlink" title="Installation pour Oracle Linux"></a>Installation pour Oracle Linux</h3><h3 id="Installation-pour-Kali-Linux"><a href="#Installation-pour-Kali-Linux" class="headerlink" title="Installation pour Kali Linux"></a>Installation pour Kali Linux</h3><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
 </div>
 
 
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/2%20DHCP%20serveur/">
+              <a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/4%20ADguard%20DNS%20serveur/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  DHCP serveur
+                  ADguard DNS serveur
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/4%20ADguard%20DNS%20serveur/">
-                4 ADguard DNS serveur
+              <a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/7%20Vue%20App%20Installation/">
+                Installation app - vue.js
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             

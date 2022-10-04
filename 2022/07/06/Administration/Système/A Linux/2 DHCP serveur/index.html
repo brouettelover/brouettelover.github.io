@@ -146,17 +146,6 @@ var _hmt = _hmt || [];
 								<div class="article-toc" style="display: none;"></div>
 							</ul>
 			
-							<ul>
-								<li class="file">
-									<a href="/2022/07/06/Administration/R%C3%A9seau/2%20STP/">
-                     
-										    2 STP
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
-							</ul>
-			
 								</li>
 								
 							</ul>
@@ -442,8 +431,14 @@ dhcp-range&#x3D; eno1,192.168.0.150,192.168.0.200,255.255.255.0,6h #Range d&#39;
 # Gateway
 dhcp-option&#x3D;3,192.168.0.1 #Fournit l&#39;adresse de la passerelle par défaut à tous les utilisateurs
 # DNS
-dhcp-option&#x3D;6,192.168.0.100 #Fournit l&#39;adresse du serveur DNS. J&#39;utilise un DNS personnel mais vous pouvez utiliser des DNS public comme ceux de google sur les adresses : 8.8.8.8 - 8.8.4.4
-</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+dhcp-option&#x3D;6,192.168.0.100 #Fournit l&#39;adresse du serveur DNS. J&#39;utilise un DNS personnel mais vous pouvez utiliser des DNS public comme ceux de google sur les adresses : 8.8.8.8 - 8.8.4.4</code></pre>
+
+<h2 id="Firewall"><a href="#Firewall" class="headerlink" title="Firewall"></a>Firewall</h2><p>Dans le cas où vous utilisez Firewalld, il faut ajouter le service DHCP à la liste des services autorisés.</p>
+<pre><code>sudo firewall-cmd --zone&#x3D;internal --add-service&#x3D;dhcp --permanent
+sudo firewall-cmd --reload</code></pre>
+
+<p>internal défini la zone local (lan) sur laquelle le pare feu autorise le service.</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
 </div>
 
 
@@ -458,8 +453,8 @@ dhcp-option&#x3D;6,192.168.0.100 #Fournit l&#39;adresse du serveur DNS. J&#39;ut
         </div>
         <div class="item right">
             
-              <a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/3%20PXE%20serveur/">
-                3 PXE serveur
+              <a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/4%20ADguard%20DNS%20serveur/">
+                ADguard DNS serveur
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
