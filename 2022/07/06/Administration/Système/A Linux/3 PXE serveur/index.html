@@ -418,7 +418,7 @@ var _hmt = _hmt || [];
 
 <div id="article-content">
 	<h2 id="Qu’est-ce-que-c’est"><a href="#Qu’est-ce-que-c’est" class="headerlink" title="Qu’est ce que c’est ?"></a>Qu’est ce que c’est ?</h2><p>Un serveur PXE est un serveur permettant à des ordinateurs connecter sur le réseau de pouvoir installer ou exécuter une image d’un système d’exploitation via le réseau local.</p>
-<h2 id="Installation-sur-un-serveur-Oracle-Linux"><a href="#Installation-sur-un-serveur-Oracle-Linux" class="headerlink" title="Installation sur un serveur Oracle Linux"></a>Installation sur un serveur Oracle Linux</h2><h3 id="DHCP-configuration"><a href="#DHCP-configuration" class="headerlink" title="DHCP configuration"></a>DHCP configuration</h3><p>Tout d’abord, il faut posséder un serveur DHCP. (vous pourrez trouver un tutorial pour configurer un serveur DHCP sur le site)<br>En effet, le serveur DHCP possède une option permettant d’indiquer un serveur PXE.</p>
+<h2 id="Installation-sur-un-serveur-Oracle-Linux"><a href="#Installation-sur-un-serveur-Oracle-Linux" class="headerlink" title="Installation sur un serveur Oracle Linux"></a>Installation sur un serveur Oracle Linux</h2><h3 id="Prerequis"><a href="#Prerequis" class="headerlink" title="Prérequis"></a>Prérequis</h3><h4 id="DHCP-configuration"><a href="#DHCP-configuration" class="headerlink" title="DHCP configuration"></a>DHCP configuration</h4><p>Tout d’abord, il faut posséder un serveur DHCP. (vous pourrez trouver un tutorial pour configurer un serveur DHCP sur le site)<br>En effet, le serveur DHCP possède une option permettant d’indiquer un serveur PXE.</p>
 <p>Voici la configuration avec DNSmasq (voir tutorial pour les autres détails):</p>
 <pre><code>interface&#x3D;eno1,lo
 port&#x3D;0
@@ -436,23 +436,23 @@ pxe-service&#x3D;x86PC, &quot;Install CentOS 7 from network server 192.168.0.100
 enable-tftp #Initialise le tftp nécessaire pour récupérer l&#39;image sur le réseau local
 tftp-root&#x3D;&#x2F;var&#x2F;lib&#x2F;tftpboot #Le dossier où est Initialisé le serveur tftp</code></pre>
 
-<h3 id="Installation-du-service"><a href="#Installation-du-service" class="headerlink" title="Installation du service"></a>Installation du service</h3><h3 id="Installation-pour-CentOS-7"><a href="#Installation-pour-CentOS-7" class="headerlink" title="Installation pour CentOS 7"></a>Installation pour CentOS 7</h3><h3 id="Installation-pour-Windows-10"><a href="#Installation-pour-Windows-10" class="headerlink" title="Installation pour Windows 10"></a>Installation pour Windows 10</h3><h3 id="Installation-pour-Oracle-Linux"><a href="#Installation-pour-Oracle-Linux" class="headerlink" title="Installation pour Oracle Linux"></a>Installation pour Oracle Linux</h3><h3 id="Installation-pour-Kali-Linux"><a href="#Installation-pour-Kali-Linux" class="headerlink" title="Installation pour Kali Linux"></a>Installation pour Kali Linux</h3><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><h2 id="Installation-des-images"><a href="#Installation-des-images" class="headerlink" title="Installation des images"></a>Installation des images</h2><h3 id="Installation-du-service"><a href="#Installation-du-service" class="headerlink" title="Installation du service"></a>Installation du service</h3><h3 id="Installation-pour-CentOS-7"><a href="#Installation-pour-CentOS-7" class="headerlink" title="Installation pour CentOS 7"></a>Installation pour CentOS 7</h3><h3 id="Installation-pour-Windows-10"><a href="#Installation-pour-Windows-10" class="headerlink" title="Installation pour Windows 10"></a>Installation pour Windows 10</h3><h3 id="Installation-pour-Oracle-Linux"><a href="#Installation-pour-Oracle-Linux" class="headerlink" title="Installation pour Oracle Linux"></a>Installation pour Oracle Linux</h3><h3 id="Installation-pour-Kali-Linux"><a href="#Installation-pour-Kali-Linux" class="headerlink" title="Installation pour Kali Linux"></a>Installation pour Kali Linux</h3><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
 </div>
 
 
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/4%20ADguard%20DNS%20serveur/">
+              <a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/2%20DHCP%20serveur/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  ADguard DNS serveur
+                  DHCP serveur
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/7%20Vue%20App%20Installation/">
-                Installation app - vue.js
+              <a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/4%20ADguard%20DNS%20serveur/">
+                ADguard DNS serveur
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
