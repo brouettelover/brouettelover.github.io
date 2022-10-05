@@ -398,7 +398,7 @@ var _hmt = _hmt || [];
                 
                     <span>
                         <i class="fa fa-tag" aria-hidden="true">
-                        <a href="/tags/Serveur/">Serveur</a>
+                        <a href="/tags/PXE/">PXE</a>
                         </i>
                     </span>
                 
@@ -406,7 +406,7 @@ var _hmt = _hmt || [];
                 
                     <span>
                         <i class="fa fa-tag" aria-hidden="true">
-                        <a href="/tags/PXE/">PXE</a>
+                        <a href="/tags/Serveur/">Serveur</a>
                         </i>
                     </span>
                 
@@ -436,23 +436,35 @@ pxe-service&#x3D;x86PC, &quot;Install CentOS 7 from network server 192.168.0.100
 enable-tftp #Initialise le tftp nécessaire pour récupérer l&#39;image sur le réseau local
 tftp-root&#x3D;&#x2F;var&#x2F;lib&#x2F;tftpboot #Le dossier où est Initialisé le serveur tftp</code></pre>
 
-<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><h2 id="Installation-des-images"><a href="#Installation-des-images" class="headerlink" title="Installation des images"></a>Installation des images</h2><h3 id="Installation-du-service"><a href="#Installation-du-service" class="headerlink" title="Installation du service"></a>Installation du service</h3><h3 id="Installation-pour-CentOS-7"><a href="#Installation-pour-CentOS-7" class="headerlink" title="Installation pour CentOS 7"></a>Installation pour CentOS 7</h3><h3 id="Installation-pour-Windows-10"><a href="#Installation-pour-Windows-10" class="headerlink" title="Installation pour Windows 10"></a>Installation pour Windows 10</h3><h3 id="Installation-pour-Oracle-Linux"><a href="#Installation-pour-Oracle-Linux" class="headerlink" title="Installation pour Oracle Linux"></a>Installation pour Oracle Linux</h3><h3 id="Installation-pour-Kali-Linux"><a href="#Installation-pour-Kali-Linux" class="headerlink" title="Installation pour Kali Linux"></a>Installation pour Kali Linux</h3><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+<h3 id="Installation-et-configuration"><a href="#Installation-et-configuration" class="headerlink" title="Installation et configuration"></a>Installation et configuration</h3><p>Installer les paquets requis :</p>
+<pre><code>sudo yum install pxelinux syslinux-common</code></pre>
+
+<p>On commence par créer un répertoire qui sera utilisé comme racine du serveur TFTP et celui pour le menu de l’interface PXE. Nous y plaçons les fichiers qui nous seront nécessaires :<br>configuration :</p>
+<pre><code>sudo mkdir -p &#x2F;var&#x2F;lib&#x2F;tftpboot&#x2F;pxelinux.cfg
+cd &#x2F;var&#x2F;lib&#x2F;tftpboot
+sudo touch pxelinux.cfg&#x2F;default
+
+sudo cp &#x2F;usr&#x2F;lib&#x2F;PXELINUX&#x2F;pxelinux.0 .
+sudo cp &#x2F;usr&#x2F;lib&#x2F;syslinux&#x2F;memdisk .
+sudo cp &#x2F;usr&#x2F;lib&#x2F;syslinux&#x2F;modules&#x2F;bios&#x2F;* .</code></pre>
+
+<h2 id="Installation-des-images"><a href="#Installation-des-images" class="headerlink" title="Installation des images"></a>Installation des images</h2><h3 id="Installation-de-Gparted"><a href="#Installation-de-Gparted" class="headerlink" title="Installation de Gparted"></a>Installation de Gparted</h3><h3 id="Installation-pour-CentOS-7"><a href="#Installation-pour-CentOS-7" class="headerlink" title="Installation pour CentOS 7"></a>Installation pour CentOS 7</h3><h3 id="Installation-pour-Windows-10"><a href="#Installation-pour-Windows-10" class="headerlink" title="Installation pour Windows 10"></a>Installation pour Windows 10</h3><h3 id="Installation-pour-Oracle-Linux"><a href="#Installation-pour-Oracle-Linux" class="headerlink" title="Installation pour Oracle Linux"></a>Installation pour Oracle Linux</h3><h3 id="Installation-pour-Kali-Linux"><a href="#Installation-pour-Kali-Linux" class="headerlink" title="Installation pour Kali Linux"></a>Installation pour Kali Linux</h3><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
 </div>
 
 
     <div class="post-guide">
         <div class="item left">
             
-              <a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/2%20DHCP%20serveur/">
+              <a href="/2022/07/06/Administration/R%C3%A9seau/1%20DHCP/">
                   <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  DHCP serveur
+                  DHCP
               </a>
             
         </div>
         <div class="item right">
             
-              <a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/4%20ADguard%20DNS%20serveur/">
-                ADguard DNS serveur
+              <a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/2%20DHCP%20serveur/">
+                DHCP serveur
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
