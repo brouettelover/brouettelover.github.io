@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		Cryptographie | 
+	 
+	Blog de BrouetteLover
+	</title>
+	
+	<!-- keywords,description -->
+	 
+		<meta name="description" content="Brouettelover - blog personnel" />
+	
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "brouettelover.github.io";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.4.14/dist/Valine.min.js"></script>
+
+	
+	
+		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3efe99c287df5a1d6f0d02d187e403c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<header id="header">
+    <a id="title" href="/" class="logo">Blog de BrouetteLover</a>
+
+	<ul id="menu">
+		<li class="menu-item">
+			<a href="/about" class="menu-item-link">ABOUT</a>
+		</li>
+		<li class="menu-item">
+			<a href="/CV" class="menu-item-link">CV</a>
+		</li>
+	
+
+	
+		<li class="menu-item">
+			<a href="https://github.com/brouettelover" class="menu-item-link" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+		</li>
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="Recherche">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Administration
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Réseau
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										1 Théorie
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/Administration/R%C3%A9seau/1%20Th%C3%A9orie/01%20DHCP/">
+                     
+										    01 DHCP
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/Administration/R%C3%A9seau/1%20Th%C3%A9orie/02%20Mod%C3%A8le%20OSI%20&%20TCP-IP/">
+                     
+										    02 Modèle OSI & TCP-IP
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/Administration/R%C3%A9seau/1%20Th%C3%A9orie/03%20IP-priv%C3%A9e/">
+                     
+										    03 IP-privée
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/Administration/R%C3%A9seau/1%20Th%C3%A9orie/04%20ARP/">
+                     
+										    04 ARP
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/Administration/R%C3%A9seau/1%20Th%C3%A9orie/05%20STP/">
+                     
+										    05 STP
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/Administration/R%C3%A9seau/1%20Th%C3%A9orie/06%20Conception%20de%20r%C3%A9seaux%20-%20couches%20r%C3%A9seaux/">
+                     
+										    06 Conception de réseaux - couches réseaux
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/Administration/R%C3%A9seau/1%20Th%C3%A9orie/07%20Les%20types%20de%20commutateurs/">
+                     
+										    07 Les types de commutateurs
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/Administration/R%C3%A9seau/1%20Th%C3%A9orie/08%20Trames%20&%20commutateurs/">
+                     
+										    08 Trames & commutateurs
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/02/26/Administration/R%C3%A9seau/1%20Th%C3%A9orie/09%20Domaine%20de%20commutation/">
+                     
+										    09 Domaine de commutation
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/2023/02/26/Administration/R%C3%A9seau/1%20Th%C3%A9orie/10%20Cryptographie/">
+                     
+										    10 Cryptographie
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/11/18/Administration/R%C3%A9seau/1%20Th%C3%A9orie/11%20IP-priv%C3%A9e/">
+                     
+										    11 IP-privée
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/03/06/Administration/R%C3%A9seau/1%20Th%C3%A9orie/12%20VLAN/">
+                     
+										    12 VLAN
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2023/03/07/Administration/R%C3%A9seau/1%20Th%C3%A9orie/13%20Commutateurs/">
+                     
+										    13 Commutateurs
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Système
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										A Linux
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/06/20/Administration/Syst%C3%A8me/A%20Linux/1%20Commandes%20Utiles/">
+                     
+										    1 Commandes Utiles
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/2%20DHCP%20serveur/">
+                     
+										    2 DHCP serveur
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/3%20PXE%20serveur/">
+                     
+										    3 PXE serveur
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/07/06/Administration/Syst%C3%A8me/A%20Linux/4%20ADguard%20DNS%20serveur/">
+                     
+										    4 ADguard DNS serveur
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Programmation
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										Javascript
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										1 Vue.js
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/0%20Information/">
+                     
+										    0 Information
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/1%20Variable/">
+                     
+										    1 Variable
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/2%20Evenement/">
+                     
+										    2 Evenement
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/3%20Composant/">
+                     
+										    3 Composant
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/4%20Propri%C3%A9t%C3%A9%20Composant/">
+                     
+										    4 Propriété Composant
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/5%20Boucle/">
+                     
+										    5 Boucle
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/6%20Cycle%20De%20Vie/">
+                     
+										    6 Cycle De Vie
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/06/20/Programmation/Javascript/1%20Vue.js/7%20Vue%20App%20Installation/">
+                     
+										    7 Vue App Installation
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/07/11/Programmation/Javascript/1%20Vue.js/8%20Vue%20CLI/">
+                     
+										    8 Vue CLI
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										TFE
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2023/02/03/TFE/0%20Introduction/">
+                     
+										    0 Introduction
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+	Cryptographie
+</h1>
+<div class="article-meta">
+	
+	<span>Brouettelover</span>
+	<span>2023-02-26 17:32:31</span>
+		<div id="article-categories">
+    
+		<span>Categories：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/Reseau/">Réseau</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/Reseau/Administration/">Administration</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/Reseau/Administration/Conception-de-reseaux/">Conception de réseaux</a>
+                        </i>
+                      
+                    </span>
+                
+            
+    
+
+    
+		<span>Tags：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/SSL/">SSL</a>
+                        </i>
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/AES/">AES</a>
+                        </i>
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/Certificats/">Certificats</a>
+                        </i>
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/RSA/">RSA</a>
+                        </i>
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/Wifi/">Wifi</a>
+                        </i>
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/802-11/">802.11</a>
+                        </i>
+                    </span>
+                
+            
+    
+		</div>
+
+</div>
+
+<div id="article-content">
+	<h1 id="Cryptographie"><a href="#Cryptographie" class="headerlink" title="Cryptographie"></a>Cryptographie</h1><p>La cryptographie ou chiffrement, c’est l’art de chiffrer, coder les messages.</p>
+<h2 id="Chiffrement-symetrique-par-blocs"><a href="#Chiffrement-symetrique-par-blocs" class="headerlink" title="Chiffrement symétrique par blocs"></a>Chiffrement symétrique par blocs</h2><p>Fonctionnement:</p>
+<ol>
+    <li>Le texte initial est fragmenté en blocs de n bits.</li>
+    <li>Pour chaque bloc xi de n bits, l'algorithme de chiffrement est appliqué pour obtenir
+un bloc chiffré yi de même taille.</li>
+    <li>On remet alors ensembles tous les blocs chiffrés séparément pour obtenir le
+message chiffré.</li>
+    <li>Pour le déchiffrement, on fragmente à nouveau le message en blocs de n bits, et
+pour chaque bloc on applique l'algorithme de déchiffrement.</li>
+</ol>
+
+<h3 id="AES-Advanced-Encryption-Standard"><a href="#AES-Advanced-Encryption-Standard" class="headerlink" title="AES (Advanced Encryption Standard)"></a>AES (Advanced Encryption Standard)</h3><p>Cet algorithme remplace le DES, après les années 2000.</p>
+<p>L’algorithme prend en entrée un bloc de 128 bits (16octs) et utilise une clef de 128, 192, 256 bits.</p>
+<ul>
+    <li>Chaque bloc subit une séquence de 5 opération (linéaires et non linéaires)</li>
+    <li>L'ensemble de ses 5 opérations définisse un tour</li>
+</ul>
+Pour une clé de 128, 192 ou 256, AES nécessite respectivement 10, 12 ou 14
+tours.
+
+<h4 id="Inconvenients"><a href="#Inconvenients" class="headerlink" title="Inconvénients"></a>Inconvénients</h4><ul>
+    <li> l’expéditeur d’un message doit au préalable communiquer la clé au destinataire
+par un canal sûr</li>
+    <li>l'’expéditeur ne peut employer une clé qu’avec un destinataire unique (sinon le
+message peut être décrypté par plusieurs destinataires)</li>
+</ul>
+
+<h2 id="Chiffrement-asymetrique"><a href="#Chiffrement-asymetrique" class="headerlink" title="Chiffrement asymétrique"></a>Chiffrement asymétrique</h2><p>Le chiffrement asymétrique fonctionne avec une pair de clef, l’une servant à déchiffrée les messages appelés <b>clef privée</b> l’autre servant à les chiffrés appelés <b>clef publique</b>.<br>Un utilisateur voulant chiffrer un message envoie alors la clef publique à son destinataire qui lui répond avec un message chiffré avec la clef publique. L’utilisateur peut ensuite lire le message en utilisant sa clef privée.</p>
+<h3 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h3><p>RSA est un algorithme de chiffrement asymétrique, le plus utilisé à ce jour. Son nom provient de ses créateurs (Rivest, Shamir, Adleman)</p>
+<p>Son principe est le suivant :</p>
+<ol>
+    <li>Il est facile de fabriquer de grands nombres <b>premiers</b> p et q</li>
+    <li>Un nombre entier défini comme <b>n = pq</b></li>
+    <li>En connaissant n, il est très difficile de retrouver les facteurs p et q</li>
+</ol>
+
+<p><b>n</b> est donc la <b>clef publique</b> utilisé pour chiffré.<br><b> p et q </b> constituent la <b>clef privée </b></p>
+<h4 id="Inconvenient"><a href="#Inconvenient" class="headerlink" title="Inconvénient"></a>Inconvénient</h4><p>L’algorithme RSA est très <b>lent</b> (1000 à 10000 fois plus lent que DES). La transmission de <b>gros fichiers</b> est donc très lente.</p>
+<p>Il est <b>moins sur</b> qu’AES.</p>
+<h2 id="Securite-Wifi"><a href="#Securite-Wifi" class="headerlink" title="Sécurité Wifi"></a>Sécurité Wifi</h2><h3 id="WEP"><a href="#WEP" class="headerlink" title="WEP"></a>WEP</h3><p>Le protocole WEP (Wired Equivalent Privacy) utilise une clef d’une longueur de 64 à 256 bits.</p>
+<p>Ce protocole utilise <b>le chiffrement par flot</b>, algorithme de chiffrement <b>symétrique</b>. Contrairement au chiffrement par bloc, ce type de chiffrement n’a pas besoin de longueurs fix pour chiffrer les données. </p>
+<p>Le chiffrement utilisé est le <b>RC4</b>.<br>Principe de fonctionnement de WEP :</p>
+<ol>
+    <li>Une clef secrète de 40 ou 128 bits est définie</li>
+    <li>Cet clef est donnée à l'access point ainsi qu'aux clients</li>
+    <li>La clef est utilisée pour créer un nombre pseudo aléatoire de la longueur d'une trame</li>
+    <li>Chaque transmission de données est ainsi chiffrée en utilisant le nombre pseudo-aléatoire comme masque grâce à un OU Exclusif entre le nombre pseudo-aléatoire et la trame.</li>
+</ol>
+
+<p>Ce type de sécurité est aujourd’hui fortuit dû à la puissance de nos ordinateurs actuels, il existe seulement 16,8 millions de clés possible à partir d’une clef. Il est donc facilement attaquable par force brut.</p>
+<h3 id="WPA-x2F-WPA-2"><a href="#WPA-x2F-WPA-2" class="headerlink" title="WPA &#x2F; WPA-2"></a>WPA &#x2F; WPA-2</h3><p>WPA (Wifi Protected Access) est une solution qui vient comblé les lacunes de WEP.</p>
+<p>Le WPA repose sur un algorithme de chiffrement appelé <b>TKIP</b> (Tempory Key Integrity Protocol). </p>
+<p>Le protocole TKIP permet la génération aléatoire de clés et offre la possibilité de modifier la clef de chiffrement plusieurs fois par seconde.</p>
+<p>Le fonctionnement de <b>WPA</b> repose sur la mise en oeuvre d’un <b>serveur d’authentification</b> (souvent un serveur RADIUS), permettant d’identifier les utilisateurs du réseau ainsi que leurs droits.</p>
+<p>Il est possible d’utiliser dans le cas des petits réseaux une version minimaliste de WPA appelée <b>WPA-PSK</b> (Pre-Shared Key) en déployant <b>une même clef de chiffrement</b> dans l’ensemble des équipement, ce qui évite la mise en place d’un serveur d’authentification.</p>
+<p>Le <b>&gt;WPA2</b> est le successeur de WPA, contrairement à WPA qui TKIP, le WPA2 utilise <b>CCMP</b> qui s’appuie sur un chiffrement <b>AES</b> et qui est plus robuste que TKIP.</p>
+<h3 id="WPA-3"><a href="#WPA-3" class="headerlink" title="WPA-3"></a>WPA-3</h3><p>Le <b>WPA3</b> est le successeur de WPA2. IL oblige l’utilisation de <b>mot de passe robuste</b> résistant au brut force. WPA3 utilise un algortihme appelée <b>GCMP-256</b>. Lors du transfert des clés de chiffrement entre le routeur et les appareils, WPA3 utilise le mode d’authentification par message haché de 384 bits afin que l’appareil et le routeur confirment qu’ils peuvent se connecter, mais d’une manière telle que même si quelqu’un intercepte la communication entre eux, il ne peut pas savoir quelle est la clé de cryptage originale.</p>
+<h2 id="Signature-numerique"><a href="#Signature-numerique" class="headerlink" title="Signature numérique"></a>Signature numérique</h2><p>Les signatures numériques sont à la fois utilisé en <b>cryptographie asymétrique</b> et dans les fonctions de <b>hachage</b>.</p>
+<p>Les caractéristiques d’une signature numériques :</p>
+<ul>
+    <li><b>authentique :</b> l'identité du signataire doit pouvoir être retrouvée de manière sûr</li>
+    <li><b>infalsifiable :</b> la signature ne peut être falsifié </li>
+    <li><b>non réutilisable :</b> elle n'est pas réutilisable et fait partie intégrante du document signé </li>
+    <li><b>inaltérable :</b> un document une fois signé ne peut plus être altéré </li>
+    <li><b>irrévocable :</b> la personne qui a signé ne peut le nier</li>
+</ul>
+
+<p>Fonctionnement entre deux personne (alphonse et martine) :</p>
+<ol>
+    <li>Alphonse choisi un algo de chiffrement asymétrique et une fonction de hachage</li>
+    <li>Alphonse génère sa clef public et privée</li>
+    <li>La clef publique est envoyé à Martine</li>
+    <li>A partir des données qu'il veut transmettre, il va faire un <b>hach</b> via la fonction de hachage choisi</li>
+    <li>Une fois le hache obtenu, il le chiffre avec sa clef privée = signature </li>
+    <li>Alphonse va préparé le message signé = message + signature </li>
+</ol>
+
+<p>Vérification :</p>
+<ol>
+    <li>Martine réçoit le message signé d'Alphonse</li>
+    <li>Martine utilise la fonction de hachage pour produire un hache du document</li>
+    <li>Martine déchiffre la signature grâce à la clé publique</li>
+    <li>Martine compare les <b>hachs entre eux</b>. S'ils sont les mêmes, le message est authentifié</li>
+    <li></li>
+</ol>
+
+<h2 id="Certificats-numeriques"><a href="#Certificats-numeriques" class="headerlink" title="Certificats numériques"></a>Certificats numériques</h2><p>Un certificat numérique est identique à une carte d’identité numérique. Dans ce cas, il signé par un tiers de confiance (comme une Autorité de Certification) qui atteste du lien entre l’identité physique et l’entité numérique.<br>Les standards les plus utilisés sont le <b>X.509</b> (RFC 5280) et <b>OpenPGP</b> (RFC 4880).</p>
+<p>La différence notable entre ces deux formats est qu’un certificat X.509 ne peut contenir qu’un seul identifiant, que cet identifiant doit contenir de nombreux champs prédéfinis, et ne peut être signé que par une seule autorité de certification. Un certificat OpenPGP peut contenir plusieurs identifiants, lesquels autorisent une certaine souplesse sur leur contenu, et peuvent être signés par une multitude d’autres certificats OpenPGP.</p>
+<p><img src="/images/r%C3%A9seau/certificat.PNG"><br>(comme une signature numérique)</p>
+<p><img src="/images/r%C3%A9seau/certificat_fonctionnement.PNG"></p>
+<h3 id="Type-de-certificats-SSL"><a href="#Type-de-certificats-SSL" class="headerlink" title="Type de certificats SSL"></a>Type de certificats SSL</h3><ol>
+    <li><b>certificat à validation étendue (EV) :</b> niveau de chiffrement le plus élevé. Pour obtenir ce certificat, les instances émettrices demandent une grande quantité d’informations.  les visiteurs obtiennent l’assurance que votre site web est exploité par votre entreprise et que les connexions à ce domaine sont sécurisées.</li>
+    <li><b>certificat à validation d’organisation (OV) :</b> niveau de chiffrement moyen. Le certificat OV comporte lui aussi une authentification de votre entreprise. Pour obtenir ce certificat, le fournisseur en question vérifie les données que vous mettez à sa disposition. Mais vos informations ne sont pas mises en avant comme pour le certificat EV qui est plus étendu. Si les visiteurs souhaitent accéder à ces données, ils devront les consulter les séparément.</li>
+    <li><b>certificat à validation de domaine (DV) : </b>niveau de chiffrement le plus bas. Le certificat DV confirme simplement que vous êtes le propriétaire du site web et que vous en administrez activement les pages. Ce que le certificat DV ne confirme pas, c’est que celui-ci a été spécifiquement émis pour votre entreprise ou que votre site est effectivement exploité par votre entreprise</li>
+</ol><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2023/02/26/Administration/R%C3%A9seau/1%20Th%C3%A9orie/09%20Domaine%20de%20commutation/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  Domaine de commutation
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2023/02/26/Administration/R%C3%A9seau/1%20Th%C3%A9orie/06%20Conception%20de%20r%C3%A9seaux%20-%20couches%20r%C3%A9seaux/">
+                Conception de réseaux - Réseau Hiérarchique
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+
+<script>
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©2021-<span id="footerYear"></span> 
+	<a href="/">Brouettelover</a> 
+	
+	
+		|
+		<span id="busuanzi_container_site_pv">
+			pv
+			<span id="busuanzi_value_site_pv"></span>
+		</span>
+		|
+		<span id="busuanzi_container_site_uv"> 
+			uv
+			<span id="busuanzi_value_site_uv"></span>
+		</span>
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">WuJun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+<script type="text/javascript"> 
+	document.getElementById('footerYear').innerHTML = new Date().getFullYear() + '';
+</script>
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
