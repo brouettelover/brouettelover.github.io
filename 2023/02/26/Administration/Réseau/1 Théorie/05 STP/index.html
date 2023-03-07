@@ -624,7 +624,27 @@ var _hmt = _hmt || [];
 <p>Le protocole STP a donc été créé pour palier à ce problème.</p>
 <h2 id="Fonctionnement"><a href="#Fonctionnement" class="headerlink" title="Fonctionnement"></a>Fonctionnement</h2><p>Le protocole STP ou spanning tree protocol est un protocole de couche 2. </p>
 <p><img src="/images/r%C3%A9seau/STP.png"></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+<p>Pour éviter les boucles dans le réseau, STP place certains ports du commutateurs en état de transmission (forwarding), et d’autres en état de blocage (blocking).</p>
+<h3 id="Un-port-bloque-par-STP"><a href="#Un-port-bloque-par-STP" class="headerlink" title="Un port bloqué par STP"></a>Un port bloqué par STP</h3><ul>
+    <li> Aucune donnée ne peut être envoyée ou reçue sur ce port (à l'exception des BPDU qui sont les trames utilisés par STP)</li>
+    <li> STP peut aussi "débloquer" un port bloqué</li>
+</ul>
+
+<h3 id="L’algorithme-de-STP-Algorithme-Spanning-Tree-STA"><a href="#L’algorithme-de-STP-Algorithme-Spanning-Tree-STA" class="headerlink" title="L’algorithme de STP - Algorithme Spanning Tree (STA)"></a>L’algorithme de STP - Algorithme Spanning Tree (STA)</h3><ul>
+    <li>Détermine les ports devant être bloqués</li>
+    <li>Algorithme sous forme d'arbre recouvrant - dans une arborescence, il n'existe qu'un seul chemin actif vers une destination. Un switch est élu pour être la racine de l'arborescence appelé : <b> Le root bridge </b></li>
+</ul>
+
+<h3 id="Principe-generale-de-STP"><a href="#Principe-generale-de-STP" class="headerlink" title="Principe générale de STP"></a>Principe générale de STP</h3><ul>
+    <li>Echange d'informations : entre les commutateurs pour élire le root bridge et pour les échanges de trames BPDU</li>
+    <li>Calcul du meilleur chemin : pour chaque segment, le calcul du meilleur chemin vers le root bridge, <b>coût est basé sur la vitesse des ports</b> le chemin avec le coût le plus faible est élu <b>meilleur chemin. Pendant ce calcul aucunes données ne peut être transmise sur le réseau !</b></li>
+    <li>Détermination du rôle des ports : 
+        <ol>
+            <li> Il doit exister un seul chemin actif entre deux segments de LAN</li>
+            <li> Le rôle décrit le lien entre un port et le port racine du réseau</li>
+        </ol>
+    </li>
+</ul><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
 </div>
 
 
