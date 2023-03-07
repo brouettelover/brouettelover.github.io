@@ -9,7 +9,7 @@
 	
 	<title>
 	
-		Commutateurs cisco | 
+		Table de routage | 
 	 
 	Blog de BrouetteLover
 	</title>
@@ -275,10 +275,21 @@ var _hmt = _hmt || [];
 							</ul>
 			
 							<ul>
-								<li class="file active">
-									<a href="/2023/03/07/Administration/R%C3%A9seau/1%20Th%C3%A9orie/13%20Commutateurs/">
+								<li class="file">
+									<a href="/2023/03/07/Administration/R%C3%A9seau/1%20Th%C3%A9orie/13%20Commutateurs%20cisco/">
                      
-										    13 Commutateurs
+										    13 Commutateurs cisco
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/2023/03/07/Administration/R%C3%A9seau/1%20Th%C3%A9orie/14%20table%20de%20routage/">
+                     
+										    14 table de routage
                      
 									</a>
 								</li>
@@ -525,12 +536,12 @@ var _hmt = _hmt || [];
 	<!-- 引入正文 -->
 	<div id="content">
 		<h1 id="article-title">
-	Commutateurs cisco
+	Table de routage
 </h1>
 <div class="article-meta">
 	
 	<span>Brouettelover</span>
-	<span>2023-03-07 11:40:35</span>
+	<span>2023-03-07 13:02:26</span>
 		<div id="article-categories">
     
 		<span>Categories：</span>
@@ -574,7 +585,23 @@ var _hmt = _hmt || [];
                 
                     <span>
                         <i class="fa fa-tag" aria-hidden="true">
-                        <a href="/tags/Commandes/">Commandes</a>
+                        <a href="/tags/Routes/">Routes</a>
+                        </i>
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/Router/">Router</a>
+                        </i>
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/Routage/">Routage</a>
                         </i>
                     </span>
                 
@@ -585,30 +612,30 @@ var _hmt = _hmt || [];
 </div>
 
 <div id="article-content">
-	<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Dans cette section, je vais aborder des commandes et fonctionnalités de certains switchs cisco. Cette section a pour but de faire un petit pense bête de certaines fonctionnalités.</p>
-<h2 id="Securite-de-port"><a href="#Securite-de-port" class="headerlink" title="Sécurité de port"></a>Sécurité de port</h2><p>Sur la configuration d’une interface physique (un port), exemple Fa 0&#x2F;1.<br>Il est possible d’activer une sécurité dessus.</p>
-<p>Il faut <b> obligatoirement </b> activer la sécurité de port avant de la configurer :</p>
-<pre><code>S1(config-if)# switchport port-security</code></pre>
+	<h2 id="La-table-de-routage"><a href="#La-table-de-routage" class="headerlink" title="La table de routage"></a>La table de routage</h2><p>La table de routage reprend l’ensemble des routes associés à un routeur. Chaque champ d’une ligne sur une table de routage correspond une fonctionnalités.</p>
+<pre><code>D   10.1.1.0&#x2F;24  [90&#x2F;2170112]  via  209.165.200.226,  00:00:05, Serial 0&#x2F;0&#x2F;0</code></pre>
 
-<p>Soit en stockant les adresses MAC apprises de manière dynamique afin d’autorisés la liste des précédents hôtes avec la commande directement dans la config initial : </p>
-<pre><code>S1(config-if)# switchport port-security mac-address sticky</code></pre>
+<ol>
+    <li> D : indique que le réseau a été découvert par le routeur avec EIGRP</li>
+    <li> 10.1.1.0/24 : indique le réseau de destination</li>
+    <li> [90/ : indique la distance administrative (fiabilité) de la source de la route</li>
+    <li> 2170112 : indique la distance à parcourir pour atteindre le réseau distant</li>
+    <li> 209.165.200.225 : indique l'addresse IP du tronçon suivant pour atteindre le réseau distant</li>
+    <li> 00:00:05 : indique le temps écoulé depuis la découverte du réseau </li>
+    <li> Serial 0/0/0 : indique l'interface de sortie du routeur permettant d'atteindre le réseau de destination</li>
+</ol>
 
-<p>Ou en utilisant une seule adresse fournie pour la configuration en cours :</p>
-<pre><code>S1(config-if)# switchport port-security mac-address &quot;adresse mac voulue&quot;</code></pre>
+<p>Le premier caractère soit D dans l’exemple ci dessus indique le type d’entrée de la table de routage :</p>
+<ol>
+    <li><b>c : Interfaces directement connectés</b>, ajoutés à la table de routage lorsqu'elles sont configurés et actives</li>
+    <li><b>L : Interfaces de route locale</b> ajoutées lorsqu'elles sont configurées et actives. Cette entrée est uniquement affichée dans IOS 15 ou les versions plus récentes pour les routes IPv4 et dans toutes les versions IOS pour les routes IPv6. </li>
+    <li><b>S : Routes statiques </b>ajoutés lors de leur configuration manuelle et quand l'interface de sortie est active </li>
+    <li><b>R : Route dynamique du protocole RIP </b> : ajouté lorsque des protocoles de routage qui découvrent le réseau de manière dynamique sont mis en oeuvre et que les réseaux sont identifiés </li>
+    <li><b>D : Route dynamique du protocole EIGRP </b> ajouté lorsque des protocoles de routage qui découvrent le réseau de manière dynamique sont mis en oeuvre et que les réseaux sont identifiés </li>
+    <li><b>O : Route dynamique du protocole OSPF </b> ajouté lorsque des protocoles de routage qui découvrent le réseau de manière dynamique sont mis en oeuvre et que les réseaux sont identifiés </li>
+</ol>
 
-<p>Il est aussi possible d’ajouter une addresse dans la configuration initial comme dans le premier cas :</p>
-<pre><code>S1(config-if)# switchport port-security mac-address sticky &quot;adresse mac voulue&quot;</code></pre>
-
-<p>On peut changer le nombre “n” d’adresse mac autorisés (n allant de 1 à 3072) :</p>
-<pre><code>S1(config-if)# switchport port-security maximum &quot;n&quot;</code></pre>
-
-<p>mode en cas de violation de rêgles de sécurité d’un port :</p>
-<pre><code>S1(config-if)# switchport port-security violation {protect | restrict | shutdown}</code></pre>
-
-<p>Voici le comportement du switch en fonction du mode choisi lors d’une violation de rêgle :</p>
-<p><img src="/images/r%C3%A9seau/violation_portsec.PNG"></p>
-<p>Afficher les addresses mac autorisés en mode enable:</p>
-<pre><code>#show port-security address</code></pre><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
 </div>
 
 
@@ -618,8 +645,8 @@ var _hmt = _hmt || [];
         </div>
         <div class="item right">
             
-              <a href="/2023/03/06/Administration/R%C3%A9seau/1%20Th%C3%A9orie/12%20VLAN/">
-                Les Vlans
+              <a href="/2023/03/07/Administration/R%C3%A9seau/1%20Th%C3%A9orie/13%20Commutateurs%20cisco/">
+                Commutateurs cisco
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
               </a>
             
