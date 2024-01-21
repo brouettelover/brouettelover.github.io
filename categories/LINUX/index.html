@@ -8,8 +8,6 @@
 	<!-- title -->
 	
 	<title>
-	
-		5 LVM | 
 	 
 	Blog de BrouetteLover
 	</title>
@@ -389,17 +387,6 @@ var _hmt = _hmt || [];
 									<a href="/2024/01/03/Administration/Syst%C3%A8me/A%20Linux/5%20DNS/">
                      
 										    5 DNS
-                     
-									</a>
-								</li>
-								<div class="article-toc" style="display: none;"></div>
-							</ul>
-			
-							<ul>
-								<li class="file active">
-									<a href="/2024/01/21/Administration/Syst%C3%A8me/A%20Linux/5%20LVM/">
-                     
-										    5 LVM
                      
 									</a>
 								</li>
@@ -953,108 +940,57 @@ var _hmt = _hmt || [];
 
 	<!-- 引入正文 -->
 	<div id="content">
-		<h1 id="article-title">
-	5 LVM
-</h1>
-<div class="article-meta">
+		<div id="index">
 	
-		<span>
-			阅读量:<span id="/2024/01/21/Administration/Syst%C3%A8me/A%20Linux/5%20LVM/" class="leancloud_visitors" data-flag-title=""></span>
-		</span>
+		<div class="index-li">
+			<a href="/2022/06/20/Administration/Syst%C3%A8me/A%20Linux/1%20Commandes%20Utiles/">
+				<h2 class="index-title">
+					Commandes Utiles
+				</h2>
+				<div class="index-brief">
+					Listes des commandesAfficher l’ensemble des périphériques
+$ sudo inxi -Fazy
+
+
+Le journal
+$ sudo journalctl
+
+Afficher les ports ouverts sur Firewalld :
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2022-06-20</span>
+                    
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/LINUX/">LINUX</a>
+										
+											>
+										
+                                    </span>
+                                
+                            
+                                
+                                    <span>
+                                        <i class="fa fa-folder" aria-hidden="true"></i>
+                                        <a href="/categories/LINUX/Administration/">Administration</a>
+										
+                                    </span>
+                                
+                            
+                    
+                </div>
+		</div>	
 	
-	<span>Brouettelover</span>
-	<span>2024-01-21 16:02:32</span>
-		<div id="article-categories">
-    
-		<span>Categories：</span>
-            
-    
-
-    
-		<span>Tags：</span>
-            
-    
-		</div>
-
+	
+	<div id="index-paginator">
+		
+	</div>
 </div>
 
-<div id="article-content">
-	<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>VM (Logical Volume Manager) est un système de gestion de volumes logiques pour les systèmes d’exploitation de type UNIX, tels que Linux. Il offre une abstraction au niveau du stockage en permettant aux administrateurs système de gérer l’espace de stockage de manière plus souple et dynamique.</p>
-<p>Voici quelques concepts clés associés à LVM :</p>
-<pre><code>Physical Volumes (PVs) : Ce sont les disques durs, partitions ou autres dispositifs de stockage physiques que LVM utilise comme composants de base.
-
-Volume Groups (VGs) : Les Physical Volumes sont regroupés pour former des Volume Groups. Cela permet de combiner l&#39;espace de stockage de plusieurs disques en un seul espace de stockage logique.
-
-Logical Volumes (LVs) : Les Logical Volumes sont les équivalents des partitions dans un système de fichiers traditionnel. Ils sont créés à partir de l&#39;espace disponible dans un Volume Group et peuvent être redimensionnés de manière dynamique.
-
-Extents : L&#39;espace de stockage dans un Volume Group est divisé en extents, qui sont des unités de taille fixe. Les Logical Volumes sont créés à partir de ces extents.
-
-Snapshots : LVM permet de créer des instantanés (snapshots) de Logical Volumes. Cela permet de sauvegarder l&#39;état d&#39;un volume à un moment donné, facilitant ainsi la sauvegarde.
-</code></pre>
-<p>avec des partitions en EXT4.</p>
-<h2 id="Resize"><a href="#Resize" class="headerlink" title="Resize"></a>Resize</h2><p>Il e</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
-</div>
-
-
-    <div class="post-guide">
-        <div class="item left">
-            
-              <a href="/2024/01/21/Administration/Syst%C3%A8me/A%20Linux/6%20Rsyslog%20&%20Loganalyzer/">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  Rsyslog & Loganalyzer sur Ubuntu 22.04 lts (php 8.3)
-              </a>
-            
-        </div>
-        <div class="item right">
-            
-              <a href="/2024/01/03/Programmation/ASM%20x64/3%20-%20Afficher%20une%20input/">
-                Afficher une input
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-              </a>
-            
-        </div>
-    </div>
-
-
-
-
-<script>
-	
-	
-    // 显示次数
-		function showTime(Counter) {
-			var query = new AV.Query("Counter");
-			if($(".leancloud_visitors").length > 0){
-				var url = $(".leancloud_visitors").attr('id').trim();
-				// where field
-				query.equalTo("words", url);
-				// count
-				query.count().then(function (number) {
-					// There are number instances of MyClass where words equals url.
-					$(document.getElementById(url)).text(number?  number : '--');
-				}, function (error) {
-					// error is an instance of AVError.
-				});
-			}
-		}
-		// 追加pv
-		function addCount(Counter) {
-			var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'wujun234.github.io';
-			var Counter = AV.Object.extend("Counter");
-			var query = new Counter;
-			query.save({
-				words: url
-			}).then(function (object) {
-			})
-		}
-		$(function () {
-			var Counter = AV.Object.extend("Counter");
-			addCount(Counter);
-			showTime(Counter);
-		});
-	
-</script>
 	</div>
 	<div id="footer">
 	<p>
