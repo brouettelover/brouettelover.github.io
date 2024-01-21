@@ -60,13 +60,7 @@ a {
 #menu .menu-item-link:hover {
 	border-bottom: 1px solid;
 }
-.separator
-{
-	display: inline-block;
-	color: #b0ddce;
-	padding: 4px;
-	font-size: 15px;
-}
+
 /* sidebar */
 #totop-toggle{
 	position: fixed;
