@@ -6,9 +6,7 @@
 }
 
 html{
-	font-family: 'Courier New', Courier, monospace;
-}
-
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 a {
     color: rgb(150, 52, 52);
     text-decoration: none;
@@ -40,7 +38,7 @@ a {
 }
 #title {
 	font-size: 20px;
-	color: #f7dbdb;
+	color: #ffffff;
 	padding: 10px 15px;
 }
 #menu {
@@ -77,7 +75,7 @@ a {
 	height: 45px;
 	width: 45px;
 	border-radius: 50%;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(71, 13, 13, 0.5);
 	color: #fff;
 	transition: all 0.3s ease-in-out;
 	opacity: 0.5;
@@ -94,7 +92,7 @@ a {
 	left: -250px;
 	height: 100%;
 	top: 0px;
-	background: rgb(255, 157, 157);
+	background: rgb(247, 119, 119);
 	z-index: 99;
 }
 #sidebar.on {
