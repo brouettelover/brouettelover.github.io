@@ -332,6 +332,9 @@ a {
 	background-color: rgba(27,31,35,.05);
 	border-radius: 3px;
 }
+#article-categories a:hover {
+	color:hsl(0, 77%, 40%);
+}
 table {
   margin: auto auto 15px;
   width: 100%;
